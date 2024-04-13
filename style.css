@@ -1,0 +1,79 @@
+body {
+    min-height: 100vh;
+   /*  background: url("/img/gestion-personal-scaled.jpg");
+    background-repeat: no-repeat;
+    /* background-position: 50px 25px; */
+   /*  background-position: center center;
+    height: 1800px;
+    background-attachment: fixed;
+    background-size: cover; */ 
+    background: url("/img/imagenf1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+
+}
+h1 {
+    text-align: center;
+    color: blue;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: larger;
+    text-decoration: underline;
+    font-weight:700;
+    
+}
+
+.intereses {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-style: italic;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    
+    
+}
+
+.nombre, .apellido, .mail, .telefono {
+    color: rgb(0, 0, 0);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    
+
+
+}
+#formulario1 {
+    display: block;
+    text-align: center;
+    
+}
+.provincia{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+
+}
+.pro {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+.cuatrimestre {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-style: italic;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+#pie{
+    background-color: red;
+    padding: 3rem;
+    font: 1em sans-serif;
+    
+}
