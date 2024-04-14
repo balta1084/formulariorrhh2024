@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../js/form.contacto.js"></script>
     
 </head>
 <body>
@@ -51,12 +52,12 @@
             <!--Etiqueta p es un párrafo dentro de la pagina-->
             
             <p class="intereses">Tus intereses:</p>
-            <input type="checkbox" name="web" value="1">Asesoramiento Tributario
-            <input type="checkbox" name="móvil" value="2">Control de Proveedores
+            <input type="checkbox" name="web" id="check1" value="1">Asesoramiento Tributario
+            <input type="checkbox" name="móvil" id="check2" value="2">Control de Proveedores
             <p class="cuatrimestre">Contactarme de:</p>
-            <input type="radio" name="cautrimestre" value="1" required>Dia(8:00 A 12:00)
-            <input type="radio" name="cautrimestre" value="2" required>Tarde(14:00 A 18:00)
-            <input type="radio" name="cautrimestre" value="3" required>Noche(19:00 A 21:00)<br><br>
+            <input type="radio" name="cautrimestre" id="radio1" value="1" required>Dia(8:00 A 12:00)
+            <input type="radio" name="cautrimestre" id="radio2" value="2" required>Tarde(14:00 A 18:00)
+            <input type="radio" name="cautrimestre" id="radio3" value="3" required>Noche(19:00 A 21:00)<br><br>
             <label class="provincia" for="provincia">Seleccione su provincia:</label>
             <!--Etiqueta select para abrir un despegable con varias opciones-->
             <select name="provincia" id="provincia">
@@ -89,8 +90,8 @@
             <!--Etiqueta textarea es para abrir una caja de comentario en la pagina-->
             Mensaje: <br>
             <textarea name="comentario" rows="5"
-            cols="40" placeholder="Escriba su mensaje aquí"></textarea><br><br>
-            <input type="submit" value="Enviar datos">
+            cols="40" id="areaTexto" placeholder="Escriba su mensaje aquí"></textarea><br><br>
+            <button type="button" id="enviar">Enviar Datos</button>
             
             </form>
     </main>
