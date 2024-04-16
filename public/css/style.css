@@ -12,6 +12,7 @@ body {
     text-align: center;
 
 }
+
 h1 {
     text-align: center;
     color: blue;
@@ -32,8 +33,7 @@ h1 {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
-    
+    font-style: normal;    
     
 }
 
@@ -44,24 +44,25 @@ h1 {
     font-weight: 600;
     font-style: normal;
 
-    
-
-
 }
+
 #formulario1 {
     display: block;
     text-align: center;
     
 }
+
 .provincia{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 
 }
+
 .pro {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 }
+
 .cuatrimestre {
     color: rgb(0, 0, 0);
     font-size: medium;
@@ -71,9 +72,23 @@ h1 {
     font-weight: 600;
     font-style: normal;
 }
+
 #pie{
-    background-color: red;
+    background-color: orangered;
     padding: 3rem;
     font: 1em sans-serif;
     
 }
+
+@media only screen and (min-width:485px) {
+    
+        .checks {
+            width: 50vw;
+        }
+        .intereses {
+        
+        display: flex;
+        justify-content:center;
+        
+        }
+    }

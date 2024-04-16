@@ -42,22 +42,33 @@
             <!--Etiqueta label: añade una leyenda o etiqueta explicativa a elementos como, por ejemplo, campos de entrada, botones o casillas de verificación.-->
             <label class="nombre" for="nombre">Nombre:</label>
             <!--Etiqueta input: se usa para crear controles interactivos para formularios basados en la web con el fin de recibir datos del usuario.-->
-            <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre"><br><br>
+            <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre">
             <label class="apellido" for="apellido">Apellido:</label>
-            <input type="text" id="apellido" required placeholder="Apellido"><br><br>
+            <input type="text" id="apellido" required placeholder="Apellido">
             <label class="mail" for="email">Email:</label>
-            <input type="email" name="email" id="email" required placeholder="Su email"><br><br>
+            <input type="email" name="email" id="email" required placeholder="Su email">
             <label class="telefono" for="telefono">Telefono:</label>
             <input type="tel" id="telefono" name="telefono" required placeholder="Su telefono">   
             <!--Etiqueta p es un párrafo dentro de la pagina-->
             
-            <p class="intereses">Tus intereses:</p>
-            <input type="checkbox" name="web" id="check1" value="1">Asesoramiento Tributario
-            <input type="checkbox" name="móvil" id="check2" value="2">Control de Proveedores
-            <p class="cuatrimestre">Contactarme de:</p>
-            <input type="radio" name="cautrimestre" id="radio1" value="1" required>Dia(8:00 A 12:00)
-            <input type="radio" name="cautrimestre" id="radio2" value="2" required>Tarde(14:00 A 18:00)
-            <input type="radio" name="cautrimestre" id="radio3" value="3" required>Noche(19:00 A 21:00)<br><br>
+            <div class="container">
+                <p class="intereses">Tus intereses:</p>
+                <div class="intereses">
+                    <div class="checks">
+                    <input type="checkbox" name="web" id="check1" value="1">Asesoramiento Tributario
+                    </div>
+                    <div class="checks">
+                    <input type="checkbox" name="móvil" id="check2" value="2">Control de Proveedores
+                    </div>
+                </div>
+                <p class="cuatrimestre">Horario de contacto:</p>
+                <div class="checks"><input type="radio" name="cautrimestre" id="radio1" value="1" required>Dia(8:00 A 12:00)
+                </div>
+                <div class="checks"><input type="radio" name="cautrimestre" id="radio2" value="2" required>Tarde(14:00 A 18:00)
+                </div>
+                <div class="checks"><input type="radio" name="cautrimestre" id="radio3" value="3" required>Noche(19:00 A 21:00)
+                </div>
+            </div>
             <label class="provincia" for="provincia">Seleccione su provincia:</label>
             <!--Etiqueta select para abrir un despegable con varias opciones-->
             <select name="provincia" id="provincia">
