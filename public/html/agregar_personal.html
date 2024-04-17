@@ -7,22 +7,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>PAGINA 2</title>
+    <script src="../js/form.agregar_personal.js"></script>
+    <title>Agregar Personal</title>
 </head>
 <body>
     <header>
         <nav>
             <span>
-                <a href="../html/index.html">Inicio</a>
-                <a href="../html/buscar_personal.html">Buscar Personal</a>
-                <a href="../html/agregar_personal.html">Agregar Personal</a>
-                <a href="../html/contacto.html">Contacto</a>
+                <a href="./index.html">Inicio</a>
+                <a href="./buscar_personal.html">Buscar Personal</a>
+                <a href="./agregar_personal.html">Agregar Personal</a>
+                <a href="./contacto.html">Contacto</a>
             </span>
         </nav>
 
     </header>
     <main>
         <h1>Agregar Personal</h1>
+
+        <form action="">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido">
+
+            <label for="nacimiento">Fecha de nacimiento:</label>
+            <input type="date" name="nacimiento" id="nacimiento">
+
+            <label for="ingreso">Fecha de ingreso:</label>
+            <input type="date" name="ingreso" id="ingreso">
+
+            <button id="enviar">Enviar</button>
+
+        </form>
 
     </main>
     <footer>
