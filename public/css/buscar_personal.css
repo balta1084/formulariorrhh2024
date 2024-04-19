@@ -1,0 +1,30 @@
+.tabla_busqueda {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Estilo para las celdas de encabezado */
+  .tabla_busqueda th {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilo para las celdas de datos */
+  .tabla_busqueda td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilo para las filas alternas */
+  .tabla_busqueda tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para resaltar al pasar el mouse sobre una fila */
+  .tabla_busqueda tr:hover {
+    background-color: #f2f2f2;
+  }
