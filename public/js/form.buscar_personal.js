@@ -10,7 +10,9 @@ function fecha_hoy(){
 
     const fecha_separada = fechaFormateada.split(' ')
 
-    const fecha = fecha_separada[0]
+    const fecha_sin_convertir = fecha_separada[0].split('-')
+
+    const fecha = `${fecha_sin_convertir[2]}/${fecha_sin_convertir[1]}/${fecha_sin_convertir[0]}`
 
     return fecha
 
@@ -51,7 +53,7 @@ function tabla_busqueda(json){
     // Creando los encabezados de la tabla
 
     const thead = document.createElement('thead');
-    const encabezados = ['Nombre', 'Apellido', 'DNI', 'Edad', 'Fecha de ingreso', 'Dias de vacaciones', 'Estado', 'Acciones'];
+    const encabezados = ['Nombre', 'Apellido', 'DNI', 'Edad', 'Fecha de ingreso', 'Dias de vacaciones', 'Estado', 'Fecha de Baja', 'Acciones'];
 
     // Creando la fila del encabezado
     const encabezadosRow = document.createElement('tr');
@@ -82,6 +84,7 @@ function tabla_busqueda(json){
         const tdFechaIngreso = document.createElement('td');
         const tdVacaciones = document.createElement('td');
         const tdEstado = document.createElement('td');
+        const tdFecha_baja = document.createElement('td');
         const tdDeshabilitar = document.createElement('button');
 
         // Se calcula la edad de la persona
@@ -136,9 +139,22 @@ function tabla_busqueda(json){
         tdDNI.textContent = dato.dni;
         tdEdad.textContent = `${edad} años`;
         tdFechaIngreso.textContent = convertirFecha(dato.ingreso);
-        tdEstado.textContent = ''
-        tdVacaciones.textContent = vacaciones;
-        tdDeshabilitar.textContent = 'Deshabilitar';
+        tdEstado.textContent = dato.estado
+        tdFecha_baja.textContent = dato.fecha_baja;
+
+        // Si es estado guardado, es OK, muestra las vacaciones y el boton será "Deshabilitar", sino lo contrario
+
+        if(dato.estado == 'Ok'){
+
+            tdVacaciones.textContent = vacaciones;
+            tdDeshabilitar.textContent = 'Deshabilitar';
+
+        }else{
+
+            tdVacaciones.textContent = '-'
+            tdDeshabilitar.textContent = 'Habilitar';
+
+        }
 
 
         tdDeshabilitar.addEventListener('click', async (e)=> {
@@ -149,17 +165,47 @@ function tabla_busqueda(json){
 
             if(confirmacion){
 
+                const personal = JSON.parse(localStorage.getItem('Personal'))
+
                 if(tdDeshabilitar.textContent == 'Deshabilitar'){
 
                     tdVacaciones.textContent = '-'
                     tdEstado.textContent = 'Baja'
+                    tdFecha_baja.textContent = fecha_hoy()
                     tdDeshabilitar.textContent = 'Habilitar'
+
+                    for(let i = 0; i<personal.length;i++){
+
+                        if(personal[i].dni == dato.dni){
+
+                            personal[i].estado = 'Baja'
+                            personal[i].fecha_baja = fecha_hoy()
+
+                        }
+
+                    }
+
+                    localStorage.setItem('Personal', JSON.stringify(personal))
 
                 }else{
 
                     tdVacaciones.textContent = vacaciones
                     tdEstado.textContent = 'Ok'
+                    tdFecha_baja.textContent = '-'
                     tdDeshabilitar.textContent = 'Deshabilitar'
+
+                    for(let i = 0; i<personal.length;i++){
+
+                        if(personal[i].dni == dato.dni){
+
+                            personal[i].estado = 'Ok'
+                            personal[i].fecha_baja = '-'
+
+                        }
+
+                    }
+
+                    localStorage.setItem('Personal', JSON.stringify(personal))
 
                 }
             }
@@ -173,6 +219,7 @@ function tabla_busqueda(json){
         fila.appendChild(tdFechaIngreso);
         fila.appendChild(tdVacaciones);
         fila.appendChild(tdEstado);
+        fila.appendChild(tdFecha_baja);
         fila.appendChild(tdDeshabilitar);
 
         tbody.appendChild(fila);

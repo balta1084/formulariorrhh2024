@@ -11,6 +11,28 @@ function capitalizar(texto){
 
 
 }
+
+function validarDNI(dni){
+
+    let numero = '';
+
+    for(let i=0;i<dni.length;i++){
+
+        if(dni[i] == '.' || dni[i] == ',' || dni[i] == '-' || dni[i] == '_'){
+
+            continue
+
+        }else{
+
+            numero+= dni[i]
+
+        }
+
+    }
+
+    return numero
+
+}
 //Funcion para valiadar el formulario
 function validarForm(){
 
@@ -23,8 +45,28 @@ function validarForm(){
         dni: document.getElementById('dni').value,
         nacimiento: document.getElementById('nacimiento').value,
         ingreso: document.getElementById('ingreso').value,
+        estado: 'Ok',
+        fecha_baja: '-'
 
     };
+
+    // Se hace la validacion para que coloquen numeros en el DNI
+
+    if(isNaN(parseInt(datos.dni))){
+
+        return alert('El dni tiene que ser un numero')
+
+    }
+
+    if(datos.dni.length < 7){
+
+        return alert('El numero es demasiado corto para un DNI')
+
+    }else if (datos.dni.length > 8){
+
+        return alert('El numero es demasiado Largo para un DNI')
+
+    }
 
     // Se recorren esos datos para verificar que esten todos completos, si no estan completos tira un alert
 
@@ -38,6 +80,8 @@ function validarForm(){
 
     }
 
+    datos[dni] = parseInt(validarDNI(datos.dni))
+    
     // Se retorna ese objeto para usarlo
 
     return datos
