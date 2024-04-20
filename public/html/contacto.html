@@ -19,7 +19,9 @@
 <body>
     <header>
 
-        <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="menu">
             <span>
                 <a href="./index.html">Inicio</a>
                 <a href="./buscar_personal.html">Buscar Personal</a>
@@ -38,71 +40,71 @@
             </article>
         </section>
         <!--Etiqueta form para hacer un formulario-->
-            <form>
-            <!--Etiqueta label: añade una leyenda o etiqueta explicativa a elementos como, por ejemplo, campos de entrada, botones o casillas de verificación.-->
-            <label class="nombre" for="nombre">Nombre:</label>
-            <!--Etiqueta input: se usa para crear controles interactivos para formularios basados en la web con el fin de recibir datos del usuario.-->
-            <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre">
-            <label class="apellido" for="apellido">Apellido:</label>
-            <input type="text" id="apellido" required placeholder="Apellido">
-            <label class="mail" for="email">Email:</label>
-            <input type="email" name="email" id="email" required placeholder="Su email">
-            <label class="telefono" for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="Su telefono">   
-            <!--Etiqueta p es un párrafo dentro de la pagina-->
-            
-            <div class="container">
-                <p class="intereses">Tus intereses:</p>
-                <div class="intereses">
-                    <div class="checks">
-                    <input type="checkbox" name="web" id="check1" value="1">Asesoramiento Tributario
+            <form id="formularioContacto" class="containerFormContact">
+                <!--Etiqueta label: añade una leyenda o etiqueta explicativa a elementos como, por ejemplo, campos de entrada, botones o casillas de verificación.-->
+                <label class="nombre" for="nombre">Nombre:</label>
+                <!--Etiqueta input: se usa para crear controles interactivos para formularios basados en la web con el fin de recibir datos del usuario.-->
+                <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre">
+                <label class="apellido" for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required placeholder="Apellido">
+                <label class="mail" for="email">Email:</label>
+                <input type="email" name="email" id="email" required placeholder="Su email">
+                <label class="telefono" for="telefono">Telefono:</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Su telefono">   
+                <!--Etiqueta p es un párrafo dentro de la pagina-->
+                
+                <div class="container">
+                    <p class="intereses">Tus intereses:</p>
+                    <div class="intereses">
+                        <div class="checks">
+                        <input type="checkbox" name="web" id="check1" value="1">Asesoramiento Tributario
+                        </div>
+                        <div class="checks">
+                        <input type="checkbox" name="móvil" id="check2" value="2">Control de Proveedores
+                        </div>
                     </div>
-                    <div class="checks">
-                    <input type="checkbox" name="móvil" id="check2" value="2">Control de Proveedores
+                    <p class="cuatrimestre">Horario de contacto:</p>
+                    <div class="checks"><input type="radio" name="cautrimestre" id="radio1" value="1" required>Dia(8:00 A 12:00)
+                    </div>
+                    <div class="checks"><input type="radio" name="cautrimestre" id="radio2" value="2" required>Tarde(14:00 A 18:00)
+                    </div>
+                    <div class="checks"><input type="radio" name="cautrimestre" id="radio3" value="3" required>Noche(19:00 A 21:00)
                     </div>
                 </div>
-                <p class="cuatrimestre">Horario de contacto:</p>
-                <div class="checks"><input type="radio" name="cautrimestre" id="radio1" value="1" required>Dia(8:00 A 12:00)
-                </div>
-                <div class="checks"><input type="radio" name="cautrimestre" id="radio2" value="2" required>Tarde(14:00 A 18:00)
-                </div>
-                <div class="checks"><input type="radio" name="cautrimestre" id="radio3" value="3" required>Noche(19:00 A 21:00)
-                </div>
-            </div>
-            <label class="provincia" for="provincia">Seleccione su provincia:</label>
-            <!--Etiqueta select para abrir un despegable con varias opciones-->
-            <select name="provincia" id="provincia">
-                <!--Etiqueta option: se usa para representar un item dentro de un <select> , un <optgroup> (en-US) o un elemento HTML5 <datalist>-->
-                <option value="1">Buenos Aires</option>
-                <option value="2">Ciudad Autónoma de Buenos Aires</option>
-                <option value="3">Catamarca</option>
-                <option value="4">Chaco</option>
-                <option value="5">Chubut</option>
-                <option value="6">Córdoba</option>
-                <option value="7">Corrientes</option>
-                <option value="8">Entre rios</option>
-                <option value="9">Formosa</option>
-                <option value="10">Jujuy</option>
-                <option value="11">La Pampa</option>
-                <option value="12">La Rioja</option>
-                <option value="13">Mendoza</option>
-                <option value="14">Misiones</option>
-                <option value="15">Neuquén</option>
-                <option value="16">Rio Negro</option>
-                <option value="17">Salta</option>
-                <option value="18">San Juan</option>
-                <option value="19">San Luis</option>
-                <option value="20">Santa Cruz</option>
-                <option value="21">Santa Fe</option>
-                <option value="22">Santiago del Estero</option>
-                <option value="23">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
-                <option value="24">Tucumán</option>
-            </select> <br><br>
-            <!--Etiqueta textarea es para abrir una caja de comentario en la pagina-->
-            Mensaje: <br>
-            <textarea name="comentario" rows="5"
-            cols="40" id="areaTexto" placeholder="Escriba su mensaje aquí"></textarea><br><br>
-            <button type="button" id="enviar">Enviar Datos</button>
+                <label class="provincia" for="provincia">Seleccione su provincia:</label>
+                <!--Etiqueta select para abrir un despegable con varias opciones-->
+                <select name="provincia" id="provincia">
+                    <!--Etiqueta option: se usa para representar un item dentro de un <select> , un <optgroup> (en-US) o un elemento HTML5 <datalist>-->
+                    <option value="1">Buenos Aires</option>
+                    <option value="2">Ciudad Autónoma de Buenos Aires</option>
+                    <option value="3">Catamarca</option>
+                    <option value="4">Chaco</option>
+                    <option value="5">Chubut</option>
+                    <option value="6">Córdoba</option>
+                    <option value="7">Corrientes</option>
+                    <option value="8">Entre rios</option>
+                    <option value="9">Formosa</option>
+                    <option value="10">Jujuy</option>
+                    <option value="11">La Pampa</option>
+                    <option value="12">La Rioja</option>
+                    <option value="13">Mendoza</option>
+                    <option value="14">Misiones</option>
+                    <option value="15">Neuquén</option>
+                    <option value="16">Rio Negro</option>
+                    <option value="17">Salta</option>
+                    <option value="18">San Juan</option>
+                    <option value="19">San Luis</option>
+                    <option value="20">Santa Cruz</option>
+                    <option value="21">Santa Fe</option>
+                    <option value="22">Santiago del Estero</option>
+                    <option value="23">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                    <option value="24">Tucumán</option>
+                </select> <br><br>
+                <!--Etiqueta textarea es para abrir una caja de comentario en la pagina-->
+                Mensaje: <br>
+                <textarea name="comentario" rows="5"
+                cols="40" id="areaTexto" placeholder="Escriba su mensaje aquí"></textarea><br><br>
+                <button type="button" id="enviar">Enviar Datos</button>
             
             </form>
     </main>
@@ -113,7 +115,3 @@
 
 </body>
 </html>
-<!--name: permite a un script acceder a su contenido. -->
-<!--id: es como el DNI de un elemento HTML: es único y solo debe contener caracteres alfanuméricos, no puede contener espacios y no debe comenzar con un número. -->
-<!--value: es usado para definr el valor enviado por el checkbox.   -->
-<!--type: elige el tipo de opcion para la pagina-->
