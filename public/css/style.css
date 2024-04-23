@@ -1,23 +1,3 @@
-body {
-    min-height: 100vh;
-    background: url("../assets/images/imagenf1.jpg") no-repeat center center fixed;
-    background-size: cover;
-    text-align: center;
-
-}
-
-h1 {
-    text-align: center;
-    color: blue;
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    font-size: larger;
-    text-decoration: underline;
-    font-weight:700;
-    
-}
 
 .cuatrimestre {
     color: rgb(0, 0, 0);
@@ -38,19 +18,6 @@ h1 {
     font-weight: 600;
     font-style: normal;    
     
-}
-
-.menu {
-    display: block; /* Ocultar el menú por defecto */
-}
-
-.menu-icon {
-    display: none; /* Ocultar el icono en pantallas grandes */
-    cursor: pointer;
-}
-
-#menu-toggle {
-    display: none; /* Mostrar el menú al hacer clic en el icono */
 }
 
 .nombre, .apellido, .mail, .telefono {
@@ -90,63 +57,79 @@ h1 {
 
 @media only screen and (max-width:450px) {
     
-    .menu {
-        position: fixed;
-        top: 0;
-        left: -300px; /* Inicialmente oculto hacia la izquierda */
-        width: 300px;
-        height: 100%;
-        background-color: #DFF216;
-        transition: left 0.3s ease; /* Transición suave */
-        border: black solid 3px;
-    }
+    /* Estilos de los labels e input */
 
-    .menu-icon {
-        display: block;
-        position: fixed; /* Posicion del icono de menu */
-        top: 10px; 
-        left: 10px; 
-        z-index: 1000;
-        color: black;
-        font-weight: bold;
-        border: solid 3px black;
-        background-color: #DFF216;
-        padding: 10px;
-    }
-
-    span {
-        display: block;
-        padding: 20px;
+    .form-row {
+        display: flex;
+        margin-bottom: 10px;
     }
     
-    a {
-        display: block;
-        color: black;
-        text-decoration: none;
-        margin-bottom: 10px;
-        font-weight: bold;
+    .form-row label {
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    
+    .form-row input {
+        width: 200px;
     }
 
-    a:hover{
-
-        color: white;
-        text-shadow: 2px 2px 4px black
-
-    }
-
-    /* Mostrar el menú al hacer clic en el icono */
-    #menu-toggle:checked + .menu-icon + .menu {
-        left: 0;
-    }
-
+    /*Estilos de los checks*/
 
     .checks {
-        width: 50vw;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
     }
+
+    .checks input {
+        margin-right: 10px;
+    }
+    /*Comparte con horario de contacto*/
+    .container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .intereses {
     
     display: flex;
-    justify-content:center;
+    flex-direction:column ;
     
     }
+
+    /* Estilos para los radios */
+
+    .cuatrimestre{
+
+        display: flex;
+
+    }
+
+    /*Estilos para Mensaje */
+
+    #provincia {
+
+        display: block;
+        width: 300px;
+        margin-top: 10px;
+
+    }
+
+    .button-box{
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    /* Estilos para footer */
+
+    .footer{
+
+        min-height: 8vh;
+
+    }
+
 }
