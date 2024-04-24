@@ -36,32 +36,28 @@
     <main>
         <!--Header 1 para poner de que se trata el formulario de esta pagina-->
         
-        <section>
-            <article>
-            <h1>Deje su datos para contactarnos!</h1>
-            </article>
-        </section>
+        <article>
+            <h2>Deje su datos para contactarnos!</h2>
+        </article>
         <!--Etiqueta form para hacer un formulario-->
-            <form id="formularioContacto" class="container-center">
-                <section id="form-inputs">
-                    <div class="form-row">
-                        <label class="nombre" for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre">
-                    </div>
-                    <div class="form-row">
-                        <label class="apellido" for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" required placeholder="Apellido">
-                    </div>
-                    <div class="form-row">
-                        <label class="mail" for="email">Email:</label>
-                        <input type="email" name="email" id="email" required placeholder="Su email">
-                    </div>
-                    <div class="form-row">
-                        <label class="telefono" for="telefono">Telefono:</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="Su telefono">
-                    </div>
-                </section>
-                <section id="form-checks" class="container-center">
+            <form action="/" id="formularioContacto" class="container-center">
+                <div class="form-row">
+                    <label class="nombre" for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required name="nombreUsuario" placeholder="Nombre">
+                </div>
+                <div class="form-row">
+                    <label class="apellido" for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" required placeholder="Apellido">
+                </div>
+                <div class="form-row">
+                    <label class="mail" for="email">Email:</label>
+                    <input type="email" name="email" id="email" required placeholder="Su email">
+                </div>
+                <div class="form-row">
+                    <label class="telefono" for="telefono">Telefono:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Su telefono">
+                </div>
+                <div id="form-checks" class="container-center">
                     <div>
                         <h2 class="intereses">Tus intereses:</h2>
                         <div class="intereses">
@@ -74,9 +70,9 @@
                                 <label for="check2">Control de Proveedores</label>
                             </div>
                         </div>
-                    <div>
-                </section>
-                <section id="form-radio" class="container-center">
+                    </div>
+                </div>
+                <div id="form-radio" class="container-center">
                     <div>
                         <h2 class="cuatrimestre">Horario de contacto:</h2>
                         <div>
@@ -94,8 +90,8 @@
                             </div>
                         </div>
                     </div>
-                </section>
-                <section id="form-select" class="container-center">
+                </div>
+                <div id="form-select" class="container-center">
                     <div>
                         <div>
                             <label class="provincia" for="provincia">Seleccione su provincia:</label>
@@ -136,7 +132,7 @@
                             <button type="button" id="enviar">Enviar Datos</button>
                         </div>
                     </div>
-                </section>
+                </div>
             </form>
     </main>
     <footer id="pie" class="footer">
