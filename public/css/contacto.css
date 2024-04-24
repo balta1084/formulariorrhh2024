@@ -209,26 +209,26 @@
 
 @media only screen and (min-width:801px){
 
-        /* Estilos de los labels e input */
+    /* Estilos de los labels e input */
 
-        .form-row {
-            display: flex;
-            margin-bottom: 10px;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .form-row label {
-            width: 100px;
-            text-align: right;
-            margin-right: 10px;
-        }
-        
-        .form-row input {
-            width: 200px;
-        }
+    .form-row {
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .form-row label {
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    
+    .form-row input {
+        width: 200px;
+    }
 
-            /*Estilos de los checks*/
+        /*Estilos de los checks*/
 
     .checks {
         display: flex;
