@@ -85,6 +85,7 @@ function tabla_busqueda(json){
         const tdVacaciones = document.createElement('td');
         const tdEstado = document.createElement('td');
         const tdFecha_baja = document.createElement('td');
+        const tdultimaFila = document.createElement('td')
         const tdDeshabilitar = document.createElement('button');
 
         // Se calcula la edad de la persona
@@ -212,6 +213,8 @@ function tabla_busqueda(json){
 
         })
 
+        tdultimaFila.appendChild(tdDeshabilitar)
+
         fila.appendChild(tdNombre);
         fila.appendChild(tdApellido);
         fila.appendChild(tdDNI);
@@ -220,7 +223,7 @@ function tabla_busqueda(json){
         fila.appendChild(tdVacaciones);
         fila.appendChild(tdEstado);
         fila.appendChild(tdFecha_baja);
-        fila.appendChild(tdDeshabilitar);
+        fila.appendChild(tdultimaFila)
 
         tbody.appendChild(fila);
 
