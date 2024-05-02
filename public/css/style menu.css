@@ -25,6 +25,13 @@ body {
   .fondo {
     background-image: url("../assets/images/image 111.png");
     height: 541px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav .logo i {
