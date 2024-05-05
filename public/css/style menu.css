@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swapW);
+
+
 body {
     background-color: white;
     color: #333;
@@ -17,25 +19,32 @@ body {
     display: flex;
     align-items: center;
   }
-  
+  .titulo{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 1px;
+  font-style: normal;
+  font-size: 72px;
+  }
   .nav .logo {
     margin-left: 20px;
   }
 
   .comidas {
-    height: 500px;
+  
     display: flex;
-    flex-flow: wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    margin: auto;
   }
 
   .tarjeta {
     width: 306px;
-    height: 428px;
+    height: 460px;
     display: block;
-    border-width: 1px;
-    border-color: rgb(204, 197, 197);
+    border-width: 2px;
+    border-color: rgb(235, 225, 225);
     border-style: solid;
     border-radius: 13px;
     display: flex;
@@ -43,16 +52,53 @@ body {
     align-items: center;
     align-content: stretch;
     justify-content: space-between;
-    
-  }
-  
-  .precio{
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    }
+
+  .div-precio {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .precio{
     font-size: x-large;
     color: brown;
     font-weight: bold;
+    font-size: 30px;
+    height: 0px;
   }
-  
-  
+
+    .tipo {
+    height: 0px;
+    font-size: 24px;
+    color: #000000;
+    }
+
+    .div-descripcion-comida{
+    display: flex;
+    text-align: center;
+    }
+
+    
+
+  .agregar-carrito {
+    background-color: #AD343E;
+    color: white;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: solid 2px white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: sans-serif;
+  } 
+
+  #p{text-align: center;}  
+
   .fondo {
     background-image: url("../assets/images/image 111.png");
     height: 541px;
@@ -108,3 +154,22 @@ body {
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
 }
+
+/* footer */
+.footer-content{
+      height: 700px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2em;
+      border-top: #050218 solid 1px;
+      background-image: linear-gradient(135deg, transparent 0%, transparent 17%,rgba(87, 146, 234,0.6) 17%, rgba(87, 146, 234,0.6) 59%,transparent 59%, transparent 64%,rgba(34, 81, 222,0.6) 64%, rgba(34, 81, 222,0.6) 100%),linear-gradient(45deg, transparent 0%, transparent 2%,rgb(87, 146, 234) 2%, rgb(87, 146, 234) 46%,rgb(114, 178, 239) 46%, rgb(114, 178, 239) 54%,transparent 54%, transparent 63%,rgb(7, 48, 216) 63%, rgb(7, 48, 216) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+     }
+
+.footer_copy{
+    padding: 1em;
+    text-align: center;
+    background-color: #474747;
+    border-top: 1px solid #050218;
+    color: #ADB29E;
+    }
