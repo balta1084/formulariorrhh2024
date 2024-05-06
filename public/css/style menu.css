@@ -102,6 +102,7 @@ body {
 
   .fondo {
     background-image: url("../assets/images/image 111.png");
+    background-size: cover;
     height: 541px;
     background-repeat: no-repeat;
     background-position-x: center;

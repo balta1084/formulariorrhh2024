@@ -3,25 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>Inicio</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>RRHH</title>
     <script
       src="https://kit.fontawesome.com/c28b6465a2.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../css/index.css">
   </head>
-  <link rel="icon" href="../assets/images/japanese-food.png" type="image/x-icon">
+
   <body>
     <nav class="nav">
       <div class="logo">
-        <i class="fa-solid fa-user-group">ACME</i>
+        <span><i class="fa-solid fa-seedling"></i> GreenEats!</span>
       </div>
       <div class="links">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./menu.html">Menu</a></li>
-          <li><a href="./promociones.html">Promociones</a></li>
-          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="agregar_personal.html">Menú de la semana</a></li>
+          <li><a href="buscar_personal.html">Cómo funciona</a></li>
+          <li><a href="contacto.html">¿Quiénes somos?</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li>
+            <a href="contacto.html"><i class="fa-solid fa-box-open"></i></a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -47,79 +51,67 @@
     <div class="row-info">
       <div class="content">
         <div class="col-6 p-30">
-          <h1>Recursos Humanos</h1>
+          <h1>Comida rica y saludable semanalmente con nuestra suscripción.</h1>
           <p>
-            Descubre la importancia del trabajo que realiza el área de Recursos
-            Humanos para proporcionar a la empresa el personal necesario para su
-            buen funcionamiento.
+            Disfruta de comidas saludables y deliciosas cada semana con nuestra
+            suscripción, ¡una experiencia culinaria equilibrada garantizada!
           </p>
           <div class="cont-btns">
-            <button class="btn-contact">Contacto</button>
-            <button class="btn-contratar">Saber más</button>
+            <button class="btn-contratar">Pruébalo: 30% descuento</button>
           </div>
         </div>
         <div class="col-6 col-img">
           <img
-            src="https://cdn.questionpro.com/userimages/site_media/portada-recursos-humanos.png"
+            src="https://cdn.sanity.io/images/jsdrzfkj/production-esmx/ff334f4ae94c987c852bca29113fb330acdd53f1-3000x2000.jpg?w=3000&h=2000&auto=format"
           />
         </div>
       </div>
     </div>
 
-    <ul class="cont-destiny-btn">
+    <!-- <ul class="cont-destiny-btn">
       <li>Ver Planes</li>
       <li>Por que acme?</li>
       <li>Caracteristicas principales</li>
       <li>Preguntas frecuentes</li>
-    </ul>
+    </ul> -->
 
     <section class="cont-info-services">
       <div class="service-main">
         <div class="info-plan">
-          <h4>RENDIMIENTO ESTÁNDAR</h4>
+          <h4>Suscripción estándar</h4>
         </div>
-        <h5>Cada plan de Web Hosting incluye:</h5>
+        <h5>Cada plan de nuestra comida incluye:</h5>
       </div>
 
       <div class="childs">
         <div>
-          <div class="icon-child"><i class="fa-solid fa-mug-hot"></i></div>
-          <strong>instalación de WordPress con solo 1 clic.</strong>
+          <strong><i class="fa-solid fa-utensils"></i> Plato principal</strong>
           <p>
-            Ponle fin a las dificultades técnicas e instala WordPress gratis con
-            un solo clic.
+            ¡Descubre nuestro plato principal y lleva tus creaciones culinarias
+            al siguiente nivel!
           </p>
         </div>
         <div>
-          <div class="icon-child"><i class="fa-solid fa-mug-hot"></i></div>
-          <strong>instalación de WordPress con solo 1 clic.</strong>
+          <strong><i class="fa-solid fa-cookie"></i> Merienda</strong>
           <p>
-            Ponle fin a las dificultades técnicas e instala WordPress gratis con
-            un solo clic.
+            ¡Recarga energías con nuestra deliciosa merienda, perfecta para
+            cualquier momento del día!
           </p>
         </div>
         <div>
-          <div class="icon-child"><i class="fa-solid fa-mug-hot"></i></div>
-          <strong>instalación de WordPress con solo 1 clic.</strong>
+          <strong><i class="fa-solid fa-ice-cream"></i> Postre</strong>
           <p>
-            Ponle fin a las dificultades técnicas e instala WordPress gratis con
-            un solo clic.
+            ¡Dulcifica tu día con nuestro irresistible postre, una delicia que
+            no querrás dejar pasar!
           </p>
         </div>
         <div>
-          <div class="icon-child"><i class="fa-solid fa-mug-hot"></i></div>
-          <strong>instalación de WordPress con solo 1 clic.</strong>
+          <strong
+            ><i class="fa-solid fa-truck-fast"></i> Envío a tu casa</strong
+          >
           <p>
-            Ponle fin a las dificultades técnicas e instala WordPress gratis con
-            un solo clic.
-          </p>
-        </div>
-        <div>
-          <div class="icon-child"><i class="fa-solid fa-mug-hot"></i></div>
-          <strong>instalación de WordPress con solo 1 clic.</strong>
-          <p>
-            Ponle fin a las dificultades técnicas e instala WordPress gratis con
-            un solo clic.
+            ¡Haz tu pedido y disfruta de la comodidad de recibirlo directamente
+            en tu puerta, sin complicaciones!
           </p>
         </div>
       </div>
@@ -127,42 +119,297 @@
 
     <div class="banner-promotion">
       <strong>
-        Para las aplicaciones de ASP.NET, ofrecemos planes de VPS de Windows con
-        Plesk Obsidian. <span>Más información</span></strong
+        Para empresas y oficinas con más de 50 pedidos a la semana ofrecemos un
+        descuento especial. <span>Más información</span></strong
       >
     </div>
 
-    <div class="parent">
-      <div class="div1">
-        <h2>Por eso somos los proveedores número 1 de hosting.</h2>
+    <div class="angry-grid">
+      <div id="item-0">
+        <h2>Los platos más sanos que podrias imaginar</h2>
         <p>
-          Cumplimos con lo que prometemos. Obtienes tiempos de carga de páginas
-          más rápidos, herramientas para hacer crecer tu negocio y medidas de
-          seguridad esenciales para crear confianza y proteger los datos de los
-          usuarios. Además, consigues tranquilidad gracias a la garantía de
-          devolución de tu dinero.
+          En GreenEats, cumplimos lo que prometemos: platos sanos, deliciosos y
+          listos para disfrutar. Con nosotros, obtienes alimentos frescos,
+          rapidez en la entrega y una garantía de satisfacción o te devolvemos
+          tu dinero. ¡Confía en nosotros para una experiencia culinaria sin
+          preocupaciones!
         </p>
       </div>
-      <div class="div2">
+      <div id="item-1">
         <img
-          src="https://img1.wsimg.com/cdnassets/transform/56785ec6-8d26-43b2-a5fe-f7b2eb2a29ac/feature-1-faster-loading-pages"
+          src="https://knoweats.com/cdn/shop/files/tapers-knoweats.jpg?v=1691670252&width=1500"
         />
       </div>
-      <div class="div3">
+      <div id="item-2">
         <img
-          src="https://img1.wsimg.com/cdnassets/transform/56785ec6-8d26-43b2-a5fe-f7b2eb2a29ac/feature-1-faster-loading-pages"
+          src="https://www.infobae.com/new-resizer/lB_03CHzSWt4ZvsA7QE8OoE6GqQ=/1200x1800/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/AOCBA54KWRENZBFRIM3OUBEIXU.jpg"
         />
       </div>
-      <div class="div4">
-        <h2>Por eso somos los proveedores número 1 de hosting.</h2>
+      <div id="item-3">
+        <h2>Con los mejores profesionales en nuestras cocinas</h2>
         <p>
-          Cumplimos con lo que prometemos. Obtienes tiempos de carga de páginas
-          más rápidos, herramientas para hacer crecer tu negocio y medidas de
-          seguridad esenciales para crear confianza y proteger los datos de los
-          usuarios. Además, consigues tranquilidad gracias a la garantía de
-          devolución de tu dinero.
+          Nuestros chefs expertos se comprometen a brindarte platos deliciosos y
+          saludables, garantizando frescura y satisfacción. Confía en nosotros
+          para una experiencia culinaria sin preocupaciones.
         </p>
+      </div>
+      <div id="item-4">
+        <h2>Enviamos tu comida a cualquier parte donde la necesites</h2>
+        <p>
+          Nos aseguramos de cumplir nuestras promesas. Además de ofrecerte
+          alimentos frescos y deliciosos, te garantizamos rapidez en la entrega
+          y medidas de seguridad para proteger tus datos. Y si no estás
+          satisfecho, te devolvemos tu dinero. Confía en nosotros para una
+          experiencia culinaria sin preocupaciones.
+        </p>
+      </div>
+      <div id="item-5">
+        <img
+          src="https://thumbs.dreamstime.com/b/comida-sana-y-dieta-concepto-restaurante-entrega-plato-retirar-de-la-fitness-p%C3%A9rdida-peso-nutrici%C3%B3n-en-cajas-aluminio-212435962.jpg"
+        />
       </div>
     </div>
-  </body>
+
+    <div class="reciclaje">
+      <ul>
+        <li>¡Más que comida! Somos plastic neutral</li>
+        <li>+1500kg de plástico recogidos del mar</li>
+        <li>+4500kg de carton reciclado</li>
+        <li>Porque amamos la naturaleza tanto como la buena comida</li>
+      </ul>
+    </div>
+    <div class="cont-best-seller">
+      <div>
+        <h2>Los más pedidos!</h2>
+      </div>
+
+      <div class="cont-cards">
+        <div class="card">
+          <img
+            src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+            alt="Imagen de ejemplo"
+          />
+          <div class="card-body">
+            <h3 class="card-title">
+              Carrillera de cerdo en salsa Pedro Ximénez
+            </h3>
+
+            <div class="cont-flex">
+              <div class="cont-card-description">
+                <div class="description-food">
+                  <div>
+                    <span>558</span>
+                    <p>Kilocalorías</p>
+                  </div>
+                  <div>
+                    <span>41g</span>
+                    <p>Proteinas</p>
+                  </div>
+                  <div>
+                    <span>30g</span>
+                    <p>Carbohidratos</p>
+                  </div>
+                  <div>
+                    <span>50g</span>
+                    <p>Grasas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price">Pedilo ya!</div>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+            alt="Imagen de ejemplo"
+          />
+          <div class="card-body">
+            <h3 class="card-title">
+              Carrillera de cerdo en salsa Pedro Ximénez
+            </h3>
+
+            <div class="cont-flex">
+              <div class="cont-card-description">
+                <div class="description-food">
+                  <div>
+                    <span>558</span>
+                    <p>Kilocalorías</p>
+                  </div>
+                  <div>
+                    <span>41g</span>
+                    <p>Proteinas</p>
+                  </div>
+                  <div>
+                    <span>30g</span>
+                    <p>Carbohidratos</p>
+                  </div>
+                  <div>
+                    <span>50g</span>
+                    <p>Grasas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price">Pedilo ya!</div>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+            alt="Imagen de ejemplo"
+          />
+          <div class="card-body">
+            <h3 class="card-title">
+              Carrillera de cerdo en salsa Pedro Ximénez
+            </h3>
+
+            <div class="cont-flex">
+              <div class="cont-card-description">
+                <div class="description-food">
+                  <div>
+                    <span>558</span>
+                    <p>Kilocalorías</p>
+                  </div>
+                  <div>
+                    <span>41g</span>
+                    <p>Proteinas</p>
+                  </div>
+                  <div>
+                    <span>30g</span>
+                    <p>Carbohidratos</p>
+                  </div>
+                  <div>
+                    <span>50g</span>
+                    <p>Grasas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price">Pedilo ya!</div>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+            alt="Imagen de ejemplo"
+          />
+          <div class="card-body">
+            <h3 class="card-title">
+              Carrillera de cerdo en salsa Pedro Ximénez
+            </h3>
+
+            <div class="cont-flex">
+              <div class="cont-card-description">
+                <div class="description-food">
+                  <div>
+                    <span>558</span>
+                    <p>Kilocalorías</p>
+                  </div>
+                  <div>
+                    <span>41g</span>
+                    <p>Proteinas</p>
+                  </div>
+                  <div>
+                    <span>30g</span>
+                    <p>Carbohidratos</p>
+                  </div>
+                  <div>
+                    <span>50g</span>
+                    <p>Grasas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price">Pedilo ya!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preguntas-cont">
+      <div class="duda-text">
+        <h5>TE AYUDAMOS EN LO QUE NECESITES</h5>
+        <h1>¿Alguna duda?</h1>
+      </div>
+
+      <div class="preguntas-flex">
+        <div class="cont-preguntas-recurrentes">
+          <div>
+            <div class="betwen">
+              <p>¿Cuándo recibiré mi pedido?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Cuándo caducan y cómo se conservan los platos?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Hay pedido mínimo?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Cambian los platos del menú cada semana?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Cuál es el peso de los platos?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Se pueden congelar los platos?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Cómo caliento los platos? ¿Micro? ¿Sartén? ¿Horno?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+          <div>
+            <div class="betwen">
+              <p>¿Puedo elegir una hora específica de entrega?</p>
+              <span>+</span>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-site">
+      <div>
+        <h4>GreenEats!</h4>
+        <div class="cont-icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      <div class="contact">
+        <h5>Contacto</h5>
+        <p>Contacta con nosotros</p>
+        <p>info@greenEats.com</p>
+        <p>¡Pregúntanos por WhatsApp!</p>
+      </div>
+    </footer>
+  </body>
 </html>
