@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/carrito.js"></script>
   </head>
 
   <body>
@@ -23,12 +24,22 @@
           <li><a href="buscar_personal.html">Cómo funciona</a></li>
           <li><a href="contacto.html">¿Quiénes somos?</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-          <li>
-            <a href="contacto.html"><i class="fa-solid fa-box-open"></i></a>
+          <li id="mostrarCarrito">
+            <a href="#"><i class="fa-solid fa-box-open"></i></a>
           </li>
         </ul>
       </div>
     </nav>
+
+    <div id="carritoContenedor" class="invisible">
+
+      <div id="carrito">
+
+        <button id="botonCerrar">Cerrar</button>
+
+      </div>
+
+    </div>
 
     <!-- <header>
       <div class="info-content">

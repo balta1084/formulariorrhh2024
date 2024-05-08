@@ -313,6 +313,21 @@ body {
   margin-top: 40px;
 }
 
+#carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+}
+
+#carrito.mostrar {
+  transform: translateX(0);
+}
+
 #item-0 {
   grid-row-start: 1;
   grid-column-start: 2;
@@ -496,6 +511,12 @@ body {
 .card .description-food span {
   color: black;
   font-weight: 500;
+}
+
+.invisible{
+
+  display: none;
+
 }
 
 .preguntas-cont {
