@@ -319,9 +319,10 @@ body {
   right: 0;
   bottom: 0;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.8);
-  transition: transform 0.5s ease;
+  background-color:white;
+  transition: transform 1s ease;
   transform: translateX(100%);
+  border: solid black 2px;
 }
 
 #carrito.mostrar {
