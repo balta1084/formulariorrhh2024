@@ -4,184 +4,471 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style menu.css" />
-    <title>Inicio</title>
+    <title>Menú</title>
     <script
       src="https://kit.fontawesome.com/c28b6465a2.js"
       crossorigin="anonymous"
     ></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script src="../js/menu.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/carrito.js"></script>
   </head>
 
-  <link rel="icon" href="../assets/images/japanese-food.png" type="image/x-icon">
-
   <body>
-      <!-- contenido header -->
-      <header>
-        <nav class="nav">
-          <div class="logo">
-            <i class="fa-solid fa-user-group">ACME</i>
-          </div>
-          <div class="links">
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./menu.html">Menu</a></li>
-              <li><a href="./promociones.html">Promociones</a></li>
-              <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+  <!-- contenido header -->
+  <nav class="nav">
+    <div class="logo">
+      <span><i class="fa-solid fa-seedling"></i> GreenEats!</span>
+    </div>
+    <div class="links">
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./menu.html">Menú de la semana</a></li>
+        <li><a href="#">Cómo funciona</a></li>
+        <li><a href="#">¿Quiénes somos?</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li id="mostrarCarrito">
+          <a href="#"><i class="fa-solid fa-box-open"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-      <!-- contenido principal -->
-    <main>
-      <section>
-        <div class="row-cols-1 ">
-          <div class="fondo">
-            <h1 class="titulo">Nuestro Menú</h1>
-            <p>Descubre nuestros deliciosos menús y ordená <br>tus comidas semanales de la forma más saludable</p>
-        </div>
-      </section>
+  <div id="carritoContenedor" class="invisible">
+    <div id="carrito">
+      <button id="botonCerrar">Cerrar</button>
+    </div>
+  </div>
+
+    <section>
+      <div class="fondo">
+          <h1 class="titulo">Nuestro <br>Menú</h1>
+          <p>Descubre nuestros deliciosos menús y ordená <br>tus comidas semanales de la forma más saludable</p>
+        <div class="cont-btns">
+          <button class="btn-contratar">Pruébalo: 30% descuento</button>
+      </div>
+    </section>
         
-      <br><br><br><br><br><br><br><br><br><br>
+<br><br>
+
+</head>
+
+<div class="banner-promotion">
+  <strong>
+    ¡Con nuestras comidas vas a recibir los aportes nutricionales que necesitas para tener energías durante todo el día! <span>Más información</span></strong
+  >
+</div>
+
+<body>
+  <div class="menu-section">
+    <h2>Almuerzo</h2>
+    <div class="menu-cards">
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+          <div class="cont-card-description">
+          <h3>$8.500</h3>
+          </div>
+          </div>
+          <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
       
-      <section>
-        <div class="comidas">
-          <div class="tarjeta">
-            <div>
-              <img id="menu1" src="../assets/images/hamburguesa.png" alt="hamburguesa">
-            </div>
-            <div class="div-precio">
-              <p id="precio1" class="precio">$6.000</p>
-            </div>
-              <h2 id="nombre1" class="tipo">Hamburguesa de queso</h2>
-            <div class="div-descripcion-comida">
-              <p id="descripcion1">Hecha con carne, cebolla, lechuga y queso y pepinos</p>
-            </div>
-            <button class="agregar-carrito" id="boton1">Agregar Carrito</button>
-            <br>
-          </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
 
-          <div class="tarjeta">
-            <div>
-                <img src="../assets/images/pizza.png" alt="pizza">
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
             </div>
-            <div class="div-precio">
-              <p class="precio">$10.000</p>
-            </div>
-            <h2 class="tipo">Pizza Hawaiana</h2>
-            <div class="div-descripcion-comida">
-              <p>Hecha con carne, cebolla, lechuga y <br> queso y pepinos</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
           </div>
-        
-          <div class="tarjeta">
-            <div>
-              <img src="../assets/images/Sopa.png" alt="Sopa de fideos">
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$11.900</h3>
             </div>
-            <div class="div-precio">
-              <p class="precio">$5.000</p>
             </div>
-            <h2 class="tipo">Papas Bravas</h2>
-            <div class="div-descripcion-comida">
-              <p>Papas con Aioli y condimentos</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
-
-          <div class="tarjeta">
-            <div>
-              <img src="../assets/images/Mask group-3.png" alt="Sopa de fideos">
-            </div>
-            <div class="div-precio">
-              <p class="precio">$5.500</p>
-            </div>
-            <h2 class="tipo">Torta Mousse</h2>
-            <div class="div-descripcion-comida">
-              <p>Mousse de café y base dulce</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
-
-          <div class="tarjeta">
-            <div>
-                <img src="../assets/images/postres.png" alt="Waffles">
-            </div>
-            <div class="div-precio">
-              <p class="precio">$5.500</p>
-            </div>
-            <h2 class="tipo">Waffles con salsas</h2>
-            <div class="div-descripcion-comida">
-              <p>Waffles con frutos rojos y salsas</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
-
-          <div class="tarjeta">
-            <div>
-                <img src="../assets/images/postres.png" alt="Waffles">
-            </div>
-            <div class="div-precio">
-              <p class="precio">$5.500</p>
-            </div>
-            <h2 class="tipo">Waffles con salsas</h2>
-            <div class="div-descripcion-comida">
-            <p>Waffles con frutos rojos y salsas</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
-
-          <div class="tarjeta">
-            <div>
-              <img src="../assets/images/postres.png" alt="Waffles">
-            </div>
-            <div class="div-precio">
-              <p class="precio">$5.500</p>
-            </div>
-            <h2 class="tipo">Waffles con salsas</h2>
-            <div class="div-descripcion-comida">
-              <p>Waffles con frutos rojos y salsas</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
-
-          <div class="tarjeta">
-            <div>
-              <img src="../assets/images/postres.png" alt="Waffles">
-            </div>
-            <div class="div-precio">
-              <p class="precio">$5.500</p>
-            </div>
-            <h2 class="tipo">Waffles con salsas</h2>
-            <div class="div-descripcion-comida">
-              <p>Waffles con frutos rojos y salsas</p>
-            </div>
-            <button class="agregar-carrito">Agregar Carrito</button>
-            <br>
-          </div>
+            <button class="price">Pedilo ya!</button>
         </div>
-      </section>
+      </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
 
-    </main>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$10.500</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- contenido footer -->
+  <div class="banner-promotion">
+    <ul>
+      <li>¡Cortá el día con algo rico y sano</li>
+      <li>¡Recuperá energía para continuar el día!</li>
+      <li>¡Comer sano, te hace sentir bien!</li>
+    </ul>
+  </div>
 
-    <footer class="footer-menu">
-      <div class= "footer-content">
-      <p class="footer_copy text-center">Todos los derechos reservados. &copy; 2024</p>
+  <div class="menu-section">
+    <h2>Merienda</h2>
+    <div class="menu-cards">
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$4.500</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$5.800</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$4.700</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reciclaje">
+    <ul>
+      <li>¡Terminá tu comida con algo bien rico!</li>
+      <li>¡Pocas calorías!</li>
+      <li>¡Ligera - Sin azucar - Sin gluten!</li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h2>Postres</h2>
+    <div class="menu-cards">
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$2.500</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$3.700</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
+          alt="Imagen de ejemplo"
+        />
+        <div class="card-body">
+          <h3 class="card-title">
+            Carrillera de cerdo en salsa Pedro Ximénez
+          </h3>
+
+          <div class="cont-flex">
+            <div class="cont-card-description">
+              <div class="description-food">
+                <div>
+                  <span>558</span>
+                  <p>Kilocalorías</p>
+                </div>
+                <div>
+                  <span>41g</span>
+                  <p>Proteinas</p>
+                </div>
+                <div>
+                  <span>30g</span>
+                  <p>Carbohidratos</p>
+                </div>
+                <div>
+                  <span>50g</span>
+                  <p>Grasas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cont-flex">
+            <div class="cont-card-description">
+            <h3>$3.200</h3>
+            </div>
+            </div>
+            <button class="price">Pedilo ya!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer class="footer-site">
+      <div>
+        <h4>GreenEats!</h4>
+        <div class="cont-icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      <div class="contact">
+        <h5>Contacto</h5>
+        <p>Contacta con nosotros</p>
+        <p>info@greenEats.com</p>
+        <p>¡Pregúntanos por WhatsApp!</p>
       </div>
     </footer>
-
   </body>
-
-
 </html>
-    
-
