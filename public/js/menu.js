@@ -1,24 +1,40 @@
 document.addEventListener('DOMContentLoaded', (e)=> {
 
-    const boton1 = document.getElementById('boton1');
-    const imagen1 = document.getElementById('menu1').src;
-    const nombre1 = document.getElementById('nombre1').textContent;
-    const descripcion1 = document.getElementById('descripcion1').textContent;
-    const precio1 = convertirPrecio('precio1')
-    const descuento1 = 30
+    for(i = 1 ; i<10 ; i++){
 
+        const boton = document.getElementById(`boton${i}`);
+        const imagen = document.getElementById(`menu${i}`).src;
+        const nombre = document.getElementById(`nombre${i}`).textContent;
+        const precio = convertirPrecio(`precio${i}`)
+        let descuento = 0
+        if(i <= 3){
 
-    boton1.addEventListener('click', (e)=>{
+            descuento = 30
 
-        agregarComida(imagen1, nombre1, descripcion1, precio1, descuento1)
+        }else if(i > 3 && i <= 6){
 
-    })
+            descuento = 45
+
+        }else{
+
+            descuento = 50
+
+        }
+
+        boton.addEventListener('click', (e)=>{
+
+            agregarComida(imagen, nombre, precio, descuento)
+    
+        })
+
+    }
+
 
     console.log(localStorage.getItem('carrito'))
 
 })
 
-function agregarComida(imagen, nombre, descripcion, precio, descuento){
+function agregarComida(imagen, nombre, precio, descuento){
 
 
     let storageString = localStorage.getItem('carrito');
@@ -29,7 +45,6 @@ function agregarComida(imagen, nombre, descripcion, precio, descuento){
 
         imagen: imagen,
         nombre: nombre,
-        descripcion: descripcion,
         precio: precio,
         descuento: descuento
 
@@ -41,7 +56,7 @@ function agregarComida(imagen, nombre, descripcion, precio, descuento){
 
     localStorage.setItem('carrito', jsonCarrito)
 
-    console.log('Menu en carrito')
+    alert(`Agregaste ${nombre} correctamente`)
 
 }
 

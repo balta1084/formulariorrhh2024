@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/menu.js"></script>
     <script src="../js/carrito.js"></script>
   </head>
 
@@ -34,7 +35,13 @@
 
   <div id="carritoContenedor" class="invisible">
     <div id="carrito">
-      <button id="botonCerrar">Cerrar</button>
+      <div id="contenido">
+        <button id="botonCerrar">Cerrar</button>
+
+      </div>
+      <div id="total">
+
+      </div>
     </div>
   </div>
 
@@ -62,12 +69,12 @@
     <h2>Almuerzo</h2>
     <div class="menu-cards">
       <div class="card">
-        <img
+        <img id="menu1"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre1" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -95,20 +102,20 @@
           </div>
           <div class="cont-flex">
           <div class="cont-card-description">
-          <h3>$8.500</h3>
+          <h3 id="precio1">$8.500</h3>
           </div>
           </div>
-          <button class="price">Pedilo ya!</button>
+          <button id="boton1" class="price">Pedilo ya!</button>
         </div>
       </div>
       
       <div class="card">
-        <img
+        <img id="menu2"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre2" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -136,19 +143,19 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$11.900</h3>
+            <h3 id="precio2">$11.900</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton2" class="price">Pedilo ya!</button>
         </div>
       </div>
       <div class="card">
-        <img
+        <img id="menu3"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre3" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -176,10 +183,10 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$10.500</h3>
+            <h3 id="precio3">$10.500</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton3" class="price">Pedilo ya!</button>
         </div>
       </div>
     </div>
@@ -197,12 +204,12 @@
     <h2>Merienda</h2>
     <div class="menu-cards">
       <div class="card">
-        <img
+        <img id="menu4"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre4" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -230,19 +237,19 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$4.500</h3>
+            <h3 id="precio4">$4.500</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton4" class="price">Pedilo ya!</button>
         </div>
       </div>
       <div class="card">
-        <img
+        <img id="menu5"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre5" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -270,19 +277,19 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$5.800</h3>
+            <h3 id="precio5">$5.800</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton5" class="price">Pedilo ya!</button>
         </div>
       </div>
       <div class="card">
-        <img
+        <img id="menu6"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre6" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -310,10 +317,10 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$4.700</h3>
+            <h3 id="precio6">$4.700</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton6" class="price">Pedilo ya!</button>
         </div>
       </div>
     </div>
@@ -331,12 +338,12 @@
     <h2>Postres</h2>
     <div class="menu-cards">
       <div class="card">
-        <img
+        <img id="menu7"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre7" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -364,19 +371,19 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$2.500</h3>
+            <h3 id="precio7">$2.500</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton7" class="price">Pedilo ya!</button>
         </div>
       </div>
       <div class="card">
-        <img
+        <img id="menu8"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre8" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -404,19 +411,19 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$3.700</h3>
+            <h3 id="precio8">$3.700</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton8" class="price">Pedilo ya!</button>
         </div>
       </div>
       <div class="card">
-        <img
+        <img id="menu9"
           src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
           alt="Imagen de ejemplo"
         />
         <div class="card-body">
-          <h3 class="card-title">
+          <h3 id="nombre9" class="card-title">
             Carrillera de cerdo en salsa Pedro Ximénez
           </h3>
 
@@ -444,10 +451,10 @@
           </div>
           <div class="cont-flex">
             <div class="cont-card-description">
-            <h3>$3.200</h3>
+            <h3 id="precio9">$3.200</h3>
             </div>
             </div>
-            <button class="price">Pedilo ya!</button>
+            <button id="boton9" class="price">Pedilo ya!</button>
         </div>
       </div>
     </div>
