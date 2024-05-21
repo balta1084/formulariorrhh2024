@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>RRHH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto - Menu</title>
     <script
       src="https://kit.fontawesome.com/c28b6465a2.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../js//menu.js"></script>
     <script src="../js/carrito.js"></script>
   </head>
 
@@ -33,17 +33,24 @@
 
     <div id="carritoContenedor" class="invisible">
       <div id="carrito">
-        <button id="botonCerrar">Cerrar</button>
 
-        <div id="contenido"></div>
+        <div id="contenido">
+          <button id="botonCerrar">Cerrar</button>
+
+
+        </div>
+        <div id="total">
+
+        </div>
+
       </div>
     </div>
 
     <section class="container">
       <div class="fondo">
-        <h1 class="titulo">Nuestro Menú</h1>
+        <h2 class="titulo">Nuestro Menú</h2>
         <p>
-          Descubre nuestros deliciosos menús y ordená <br />tus comidas
+          Descubre nuestros deliciosos menús y ordená <br>tus comidas
           semanales de la forma más saludable
         </p>
         <div class="cont-btns">
@@ -54,16 +61,16 @@
 
     <div class="postres">
       <div class="cont-title-postres">
-        <h1>Postres</h1>
+        <h2>Postres</h2>
       </div>
       <div class="cont-cards">
         <div class="card">
-          <img
+          <img id="menu1"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre1">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -86,19 +93,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio1">$2000</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton1" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu2"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre2">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -121,19 +132,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio2">$2500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton2" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu3"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre3">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -156,19 +171,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio3">$1750</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton3" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu4"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre4">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -191,19 +210,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio4">$3500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton4" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu5"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre5">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -226,10 +249,14 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio5">$5500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton5" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
       </div>
@@ -237,16 +264,16 @@
 
     <div class="almuerzos">
       <div class="cont-title-almuerzo">
-        <h1>Almuerzos</h1>
+        <h2>Almuerzos</h2>
       </div>
       <div class="cont-cards">
         <div class="card">
-          <img
+          <img id="menu6"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre6">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -269,19 +296,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio6">$9500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton6" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu7"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre7">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -304,19 +335,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio7">$5450</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton7" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu8"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre8">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -339,19 +374,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio8">$2500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton8" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu9"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre9">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -374,19 +413,23 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio9">$6850</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton9" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
         <div class="card">
-          <img
+          <img id="menu10"
             src="https://s.yimg.com/ny/api/res/1.2/JEkDJCodD5usMCcAyFqnTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/es/hola.com/7b1855dbf1f9c34756279a5a3dbc90a6"
             alt="Imagen de ejemplo"
-          />
+          >
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title" id="nombre10">
               Carrillera de cerdo en salsa Pedro Ximénez
             </h3>
 
@@ -409,10 +452,14 @@
                     <span>50g</span>
                     <p>Grasas</p>
                   </div>
+                  <div>
+                    <span>Precio</span>
+                    <p id="precio10">$2500</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="price">Pedilo ya!</div>
+            <button id="boton10" class="price buttonPrice">Pedilo ya!</button>
           </div>
         </div>
       </div>

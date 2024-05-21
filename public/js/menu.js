@@ -6,24 +6,10 @@ document.addEventListener('DOMContentLoaded', (e)=> {
         const imagen = document.getElementById(`menu${i}`).src;
         const nombre = document.getElementById(`nombre${i}`).textContent;
         const precio = convertirPrecio(`precio${i}`)
-        let descuento = 0
-        if(i <= 3){
-
-            descuento = 30
-
-        }else if(i > 3 && i <= 6){
-
-            descuento = 45
-
-        }else{
-
-            descuento = 50
-
-        }
 
         boton.addEventListener('click', (e)=>{
 
-            agregarComida(imagen, nombre, precio, descuento)
+            agregarComida(imagen, nombre, precio)
     
         })
 
@@ -34,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (e)=> {
 
 })
 
-function agregarComida(imagen, nombre, precio, descuento){
+function agregarComida(imagen, nombre, precio){
 
 
     let storageString = localStorage.getItem('carrito');
@@ -46,7 +32,6 @@ function agregarComida(imagen, nombre, precio, descuento){
         imagen: imagen,
         nombre: nombre,
         precio: precio,
-        descuento: descuento
 
     }
 

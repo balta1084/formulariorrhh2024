@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let carritos = JSON.parse(localStorageJson)
 
+    if(carritos == null){
+        return
+    }
+
     const contenido = document.getElementById('contenido')
 
     let acumulador = 0
@@ -50,27 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const precio = document.createElement('p');
         precio.textContent = "Precio: $" + carrito.precio;
         menuDiv.appendChild(precio);
+
+        acumulador += parseFloat(carrito.precio)
     
-        const descuento = document.createElement('p');
-        descuento.textContent = "Descuento: " + carrito.descuento + "%";
-        menuDiv.appendChild(descuento);
-
-        const subtotal = (carrito.precio * (1 - parseFloat(carrito.descuento/100)))
-
-        const precioDescuento = document.createElement('p')
-        precioDescuento.textContent = `Subtotal: $${subtotal}`
-        menuDiv.appendChild(precioDescuento);
-
-        acumulador += subtotal
-    
-        // Agregar el producto al div principal
         contenido.appendChild(menuDiv);
 
     })
 
     const total = document.createElement('p')
     total.textContent = `Total: $${acumulador.toFixed(2)}`;
-    totalDiv.appendChild(total)
+    totalDiv.appendChild(total);
     contenido.appendChild(totalDiv)
-
 });

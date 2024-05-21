@@ -509,6 +509,12 @@ body {
   padding-bottom: 10px;
 }
 
+.buttonPrice {
+
+  width: 100%;
+
+}
+
 .card .description-food span {
   color: black;
   font-weight: 500;
