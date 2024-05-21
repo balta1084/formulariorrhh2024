@@ -1,182 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Promociones</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style menu.css" />
+    <title>Menú</title>
     <script
-    src="https://kit.fontawesome.com/c28b6465a2.js"
-    crossorigin="anonymous"
-  ></script>
-</head>
-<body>
+      src="https://kit.fontawesome.com/c28b6465a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/menu.js"></script>
+    <script src="../js/carrito.js"></script>
+  </head>
 
-    <header>
+  <body>
+    <div id="carritoContenedor" class="invisible">
+      <div id="carrito">
+        <div id="contenido">
+          <button id="botonCerrar">Cerrar</button>
+        </div>
+        <div id="total"></div>
+      </div>
+    </div>
 
-        <nav class="nav">
-            <div class="logo">
-              <span><i class="fa-solid fa-seedling"></i> GreenEats!</span>
-            </div>
-            <div class="links">
-              <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./menu.html">Menú de la semana</a></li>
-                <li><a href="./promociones.html">Promociones</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li id="mostrarCarrito">
-                  <a href="#"><i class="fa-solid fa-box-open"></i></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+    <nav class="nav">
+      <div class="logo">
+        <span> GreenEats!</span>
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./menu.html">Menú</a></li>
+          <li><a href="./promociones.html">Promociones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li id="mostrarCarrito">
+            <a href="#"><i class="fa-solid fa-box-open"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    </header>
+    <!-- Promociones -->
 
-    <main>
+    <div class="promociones-disponibles">
+      <h1>Promociones disponibles</h1>
+    </div>
 
-        <section>
-            <h2>Ofertas Especiales</h2>
+    <section class="ofertas-especiales">
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+      <div class="cupon">
+        <img
+          src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg"
+        />
+        <form class="form-style" action="" id="combo1">
+          <input
+            type="text"
+            name="desuento1_input"
+            id="desuento1_input"
+            readonly
+            value="40"
+          />
+          <label for="desuento1_input">% Off</label>
+          <button id="desuento1_boton">Usar Cupon</button>
+        </form>
+      </div>
+    </section>
 
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <form action="" id="combo1">
-                        <p>Combo1</p>
-                        <input type="text" name="desuento1_input" id="desuento1_input" readonly value="40">
-                        <label for="desuento1_input">% Off</label>
-                        <button id="desuento1_boton">Usar Cupon</button>
-                    </form>
-                </div>
+    <!-- Termina de promociones -->
 
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <form action="" id="combo2">
-                        <p>Combo2</p>
-                        <input type="text" name="desuento2_input" id="desuento2_input" readonly value="30">
-                        <label for="desuento2_input">% Off</label>
-                        <button id="desuento2_boton">Usar Cupon</button>
-                    </form>
-                </div>
-
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <form action="" id="combo2">
-                        <p>Combo3</p>
-                        <input type="text" name="desuento3_input" id="desuento3_input" readonly value="55">
-                        <label for="desuento3_input">% Off</label>
-                        <button id="desuento3_boton">Usar Cupon</button>
-                    </form>
-                </div>
-
-        </section>
-
-        <section>
-            <h2>Cupones</h2>
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <p>Cupon 1</p>
-                    <p>Descuento 1</p>
-                </div>
-
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <p>Cupon 2</p>
-                    <p>Descuento2</p>
-                </div>
-
-                <div>
-                    <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                    <p>Cupon 3</p>
-                    <p>Descuento3</p>
-                </div>
-        </section>
-
-        <section>
-            <h2>Dias de la semana</h2>
-
-            <div>
-                <h3>Lunes</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Lunes</p>
-                        <p>Descuento Lunes</p>
-                    </div>
-
-            </div>
-
-            <div>
-                <h3>Martes</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Martes</p>
-                        <p>Descuento Martes</p>
-                    </div>
-
-            </div>
-
-            <div>
-                <h3>Miercoles</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Miercoles</p>
-                        <p>Descuento Miercoles</p>
-                    </div>
-                        
-            </div>
-
-            <div>
-                <h3>Jueves</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Jueves</p>
-                        <p>Descuento Jueves</p>
-                    </div>
-
-            </div>
-
-            <div>
-                <h3>Viernes</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Viernes</p>
-                        <p>Descuento Viernes</p>
-                    </div>
-
-            </div>
-
-            <div>
-                <h3>Sabado</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Sabado</p>
-                        <p>Descuento Sabado</p>
-                    </div>
-
-            </div>
-
-            <div>
-                <h3>Domingo</h3>
-
-                    <div>
-                        <img src="../assets/images/17121588111681937054Cupón Web - Kreamball 676.jpg" alt="" width="150px" height="250px">
-                        <p>combo Domingo</p>
-                        <p>Descuento Domingo</p>
-                    </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-
+    <footer class="footer-site">
+      <div>
+        <h4>GreenEats!</h4>
+        <div class="cont-icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-title">
+          <h5>Contacto</h5>
+        </div>
+        <p>Contacta con nosotros</p>
+        <p>info@greenEats.com</p>
+        <p>¡Pregúntanos por WhatsApp!</p>
+      </div>
     </footer>
-    
-</body>
+  </body>
 </html>

@@ -1,53 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Mi Tienda de Comida</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/style.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+    <title>RRHH</title>
+    <script
+      src="https://kit.fontawesome.com/c28b6465a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/carrito.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="logo">
+        <span> GreenEats!</span>
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./menu.html">Menú</a></li>
+          <li><a href="./promociones.html">Promociones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li id="mostrarCarrito">
+            <a href="#"><i class="fa-solid fa-box-open"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <nav class="nav">
-    <div class="logo">
-      <span><i class="fa-solid fa-seedling"></i> GreenEats!</span>
-    </div>
-    <div class="links">
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./menu.html">Menú de la semana</a></li>
-        <li><a href="./promociones.html">Promociones</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li id="mostrarCarrito">
-          <a href="#"><i class="fa-solid fa-box-open"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <div id="carritoContenedor" class="invisible">
+      <div id="carrito">
+        <button id="botonCerrar">Cerrar</button>
 
-    <h1>Contacto</h1>
-    <p>¡Estamos aquí para ayudarte! Completa el siguiente formulario para ponerte en contacto con nosotros.</p>
-    <form>
+        <div id="contenido"></div>
+      </div>
+    </div>
+
+    <div class="container-contact">
+      <h1>Contacto</h1>
+      <p>
+        ¡Estamos aquí para ayudarte! Completa el siguiente formulario para
+        ponerte en contacto con nosotros.
+      </p>
+      <form>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <input type="text" id="nombre" name="nombre" required />
 
         <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required />
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono"><br><br>
+        <input type="tel" id="telefono" name="telefono" />
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-        <input type="submit" value="Enviar">
-    </form>
-</body>
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <footer class="footer-site">
+      <div>
+        <h4>GreenEats!</h4>
+        <div class="cont-icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-title">
+          <h5>Contacto</h5>
+        </div>
+        <p>Contacta con nosotros</p>
+        <p>info@greenEats.com</p>
+        <p>¡Pregúntanos por WhatsApp!</p>
+      </div>
+    </footer>
+  </body>
 </html>
-
