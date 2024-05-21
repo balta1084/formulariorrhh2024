@@ -426,9 +426,6 @@ body {
   font-size: 40px;
 }
 
-.cont-best-seller {
-}
-
 .card {
   max-width: 350px;
   background-color: #f1f1f1b5;
@@ -689,7 +686,7 @@ body {
 }
 
 /* Estilos para el input del descuento */
-#desuento1_input {
+#desuento1_input, #desuento2_input, #desuento3_input, #desuento4_input, #desuento5_input, #desuento6_input {
   font-size: 24px; /* Tamaño de fuente grande */
   font-weight: bold; /* Texto en negrita */
   width: 50px; /* Ancho del input */
@@ -699,14 +696,14 @@ body {
 }
 
 /* Estilos para el label del descuento */
-label[for="desuento1_input"] {
+label[for="desuento1_input"], label[for="desuento2_input"], label[for="desuento3_input"], label[for="desuento4_input"], label[for="desuento5_input"],label[for="desuento6_input"]{
   font-size: 18px; /* Tamaño de fuente */
   color: #666; /* Color de texto gris */
   margin-right: 10px;
 }
 
 /* Estilos para el botón de usar cupón */
-#desuento1_boton {
+#desuento1_boton, #desuento2_boton, #desuento3_boton,#desuento4_boton,#desuento5_boton,#desuento6_boton {
   background-color: #4caf50; /* Fondo verde */
   color: #fff; /* Texto blanco */
   border: none; /* Sin borde */
