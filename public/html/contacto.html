@@ -53,6 +53,37 @@
         <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono">
 
+        <label>Motivo de Contacto:</label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="reason" value="consulta" required> Consulta
+            </label>
+            <label>
+                <input type="radio" name="reason" value="sugerencia" required> Sugerencia
+            </label>
+            <label>
+                <input type="radio" name="reason" value="queja" required> Queja
+            </label>
+            <label>
+                <input type="radio" name="reason" value="otro" required> Otro
+            </label>
+        </div>
+        
+        <label for="zona">Seleccione su zona:</label>
+        <select id="zona" name="zona" required>
+            <option value="">Seleccione una zona</option>
+            <option value="centro">Centro</option>
+            <option value="norte">Norte</option>
+            <option value="sur">Sur</option>
+            <option value="oeste">Oeste</option>
+            <option value="palermo">Palermo</option>
+            <option value="recoleta">Recoleta</option>
+            <option value="belgrano">Belgrano</option>
+            <option value="almagro">Almagro</option>
+            <option value="caballito">Caballito</option>
+            <option value="villa_urquiza">Villa Urquiza</option>
+        </select>
+
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
