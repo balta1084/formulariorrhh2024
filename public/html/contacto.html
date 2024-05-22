@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/carrito.js"></script>
   </head>
-  <body>
+  <body class="backgroundContacto">
     <nav class="nav">
       <div class="logo">
         <span> GreenEats!</span>
@@ -31,9 +31,16 @@
 
     <div id="carritoContenedor" class="invisible">
       <div id="carrito">
-        <button id="botonCerrar">Cerrar</button>
 
-        <div id="contenido"></div>
+        <div id="contenido">
+          <button id="botonCerrar">Cerrar</button>
+
+
+        </div>
+        <div id="total">
+
+        </div>
+
       </div>
     </div>
 
@@ -52,6 +59,41 @@
 
         <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono">
+
+        <div class="checkContainer">
+          <label>Motivo de Contacto:</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="reason" id="consulta" value="consulta" required> 
+              <label for="consulta">Consulta</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="reason" value="sugerencia" id="sugerencia" required>
+              <label for="sugerencia">Sugerencia</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="reason" value="queja" id="queja" required>
+              <label for="queja">Queja</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="reason" value="otro" id="otro" required>
+              <label for="otro">Otro</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="selectForm">
+          <label for="zona">Seleccione la sucursal:</label>
+          <select id="zona" name="zona" required>
+              <option value="" selected disabled>--Selecciona--</option>
+              <option value="palermo">Palermo</option>
+              <option value="recoleta">Recoleta</option>
+              <option value="belgrano">Belgrano</option>
+              <option value="almagro">Almagro</option>
+              <option value="caballito">Caballito</option>
+              <option value="villa_urquiza">Villa Urquiza</option>
+          </select>
+        </div>
 
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>

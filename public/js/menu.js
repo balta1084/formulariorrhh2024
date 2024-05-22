@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', (e)=> {
 
+    // Se recorren todos los elementos de los platos el menu para guardarlos en el localstorage cuando se presiona click en "pedilo ya"
+
     for(i = 1 ; i<10 ; i++){
 
         const boton = document.getElementById(`boton${i}`);
@@ -44,6 +46,8 @@ function agregarComida(imagen, nombre, precio){
     alert(`Agregaste ${nombre} correctamente`)
 
 }
+
+// Funcion para convertir el precio en un formato apto para tabajarlo
 
 function convertirPrecio(id) {
     const precio = document.getElementById(id).textContent.trim();
