@@ -10,6 +10,7 @@
     ></script>
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/carrito.js"></script>
+    <script src="../js/contacto.js"></script>
   </head>
   <body class="backgroundContacto">
     <nav class="nav">
@@ -50,7 +51,7 @@
         ¡Estamos aquí para ayudarte! Completa el siguiente formulario para
         ponerte en contacto con nosotros.
       </p>
-      <form>
+      <form action="/"  id="contactForm">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -98,7 +99,7 @@
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-        <input type="submit" value="Enviar">
+        <input id="enviar" type="button" value="Enviar">
       </form>
     </div>
 
