@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carritoContenedor = document.getElementById('carritoContenedor');
     const carrito = document.getElementById('carrito');
     const botonCerrar = document.getElementById('botonCerrar');
-    const totalDiv = document.getElementById('total')
+    const totalDiv = document.getElementById('total');
 
     // Evento de click para mostrar el carrito con animacion
 
@@ -63,13 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
         img.height = 100
         menuDiv.appendChild(img);
 
+        const divElemento = document.createElement('div')
+        divElemento.classList.add('nombrePrecio')
+
         const nombre = document.createElement('p');
         nombre.textContent = carrito.nombre;
-        menuDiv.appendChild(nombre);
+        divElemento.appendChild(nombre);
     
         const precio = document.createElement('p');
         precio.textContent = "$" + carrito.precio;
-        menuDiv.appendChild(precio);
+        divElemento.appendChild(precio);
+
+        menuDiv.appendChild(divElemento)
 
         acumulador += parseFloat(carrito.precio)
     
@@ -81,4 +86,31 @@ document.addEventListener('DOMContentLoaded', () => {
     total.textContent = `Total: $${acumulador.toFixed(2)}`;
     totalDiv.appendChild(total);
     contenido.appendChild(totalDiv)
+
+    const divConfirmar = document.createElement('div')
+    divConfirmar.classList.add('centrarBoton')
+
+    const confirmar = document.createElement('button')
+    confirmar.textContent = 'Pedir'
+    confirmar.classList.add('boton')
+    confirmar.id = 'confirmarPedido'
+
+    divConfirmar.appendChild(confirmar)
+    contenido.appendChild(divConfirmar)
+
+    const confirmarPedido = document.getElementById('confirmarPedido')
+
+    if(confirmarPedido){
+
+      confirmarPedido.addEventListener('click', e=>{
+
+        alert('Tu pedido está en camino')
+
+        localStorage.removeItem('carrito')
+
+        return location.reload();
+
+      })
+
+    }
 });
