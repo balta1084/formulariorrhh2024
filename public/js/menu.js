@@ -45,6 +45,8 @@ function agregarComida(imagen, nombre, precio){
 
     alert(`Agregaste ${nombre} correctamente`)
 
+    location.reload()
+
 }
 
 // Funcion para convertir el precio en un formato apto para tabajarlo
