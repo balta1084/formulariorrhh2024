@@ -10,8 +10,24 @@ function loginHTML(req,res){
 
 }
 
+function loginJS(req,res){
+
+    const ruta = path.join(__dirname, '../../public/js/login.js');
+
+    res.sendFile(ruta);
+
+}
+
+async function logIn(req,res){
+
+    const data = req.body
+
+    return res.json({status: 'ok', respuesta: `Ingresaste: ${data.email} ${data.pass}, funcion en construccion`})
+
+}
+
 module.exports = {
 
-    loginHTML
+    loginHTML, loginJS, logIn
 
 };
