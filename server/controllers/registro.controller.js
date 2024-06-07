@@ -10,8 +10,26 @@ function registroHTML(req,res){
 
 }
 
+function registroJS(req,res){
+
+    const ruta = path.join(__dirname, '../../public/js/registro.js');
+
+    res.sendFile(ruta);
+
+}
+
+async function registrar(req,res){
+
+    const datos = req.body
+
+    console.log(datos)
+
+    res.json({status: 'ok', respuesta:datos})
+
+}
+
 module.exports = {
 
-    registroHTML
+    registroHTML, registroJS, registrar
 
 };
