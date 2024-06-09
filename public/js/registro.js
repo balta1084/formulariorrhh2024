@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', e=>{
     registrarse.addEventListener('click', async (e)=>{
 
         e.preventDefault()
-    
+
         const datos = {
 
             nombre: document.getElementById('nombre').value,
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', e=>{
 
             return alert('Las contraseñas no coinciden')
 
+        // Comunicacion con el server 
         }
 
         try{
@@ -68,13 +69,32 @@ document.addEventListener('DOMContentLoaded', e=>{
 
             });
 
+            // Respuesta del server
             if(response.ok){
 
                 const respuesta = await response.json();
 
-                const mensaje = respuesta.respuesta
+                console.log(respuesta)
 
-                return alert(mensaje)
+                if(response.status === 200){
+
+                    return alert(respuesta.message)
+
+                }
+
+            }else{
+
+                const respuesta = await response.json();
+
+                if(response.status == 400){
+
+                    return alert(respuesta.message)
+
+                }else if(response.status === 500){
+
+                    return alert(respuesta.message)
+
+                }
 
             }
 
