@@ -45,9 +45,25 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
                 const respuesta = await response.json();
 
-                const mensaje = respuesta.respuesta
+                if(response.status == 200){
 
-                return alert(mensaje)
+                    console.log(respuesta)
+
+                    alert(respuesta.message)
+    
+                    return window.location.href = respuesta.href
+
+                }
+
+            }else{
+
+                const respuesta = await response.json();
+
+                if(response.status == 400){
+
+                    return alert(respuesta.message)
+
+                }
 
             }
 

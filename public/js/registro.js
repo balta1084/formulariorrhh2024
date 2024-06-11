@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', e=>{
 
                 const respuesta = await response.json();
 
-                console.log(respuesta)
+                if(response.status === 201){
 
-                if(response.status === 200){
+                    alert(respuesta.message)
 
-                    return alert(respuesta.message)
+                    return window.location.href = respuesta.href
 
                 }
 
@@ -91,6 +91,10 @@ document.addEventListener('DOMContentLoaded', e=>{
                     return alert(respuesta.message)
 
                 }else if(response.status === 500){
+
+                    return alert(respuesta.message)
+
+                }else if(response.status == 409){
 
                     return alert(respuesta.message)
 

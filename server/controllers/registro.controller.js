@@ -1,5 +1,6 @@
 const path = require('path');
 const {conectar} = require('../config/db');
+const {encrypt} = require('../modulos/funciones')
 
 // Funcion para enviar los archivos estaticos
 
@@ -55,19 +56,43 @@ async function registrar(req,res){
 
     };
 
+    //Encriptando la pass
+    const hashPassword = await encrypt(datos.pass);
+
     // Registrando al usuario
 
     try{
 
-        const pool = await conectar;
+        const pool = await conectar();
+
+        const queryRead = `SELECT mail FROM usuarios WHERE mail = ?`
+        const queryRead2 = `SELECT dni FROM usuarios WHERE dni = ?`
+
+        const emails = await pool.query(queryRead, datos.email);
+
+        if(emails[0][0]){
+
+            await pool.end();
+            return res.status(409).json({message: 'Este mail o dni ya estan registrado'});
+
+        };
+
+        const dnis = await pool.query(queryRead2, datos.dni);
+
+        if(dnis[0][0]){
+
+            await pool.end();
+            return res.status(409).json({message: 'Este mail o dni ya estan registrado'});
+
+        }
 
         const query = 'INSERT INTO Usuarios (nombre, apellido, dni, mail, password) VALUES (?, ?, ?, ?, ?)';
-        const values = [datos.nombre, datos.apellido, datos.dni, datos.email, datos.pass];
+        const values = [datos.nombre, datos.apellido, datos.dni, datos.email, hashPassword];
 
         await pool.query(query, values);
 
         await pool.end()
-        res.json({ message: `El email: ${datos.email} se ha registrado correctamente` });
+        res.status(201).json({ message: `El email: ${datos.email} se ha registrado correctamente`, href: '/login' });
 
 
     }catch(error){
