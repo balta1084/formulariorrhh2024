@@ -41,7 +41,7 @@ async function logIn(req,res){
 
         const pool = await conectar();
 
-        const query = `SELECT mail, password FROM usuarios WHERE mail = ?`;
+        const query = `SELECT mail, password, nombre FROM usuarios WHERE mail = ?`;
 
         const resultado = await pool.query(query, data.email);
 
@@ -63,7 +63,7 @@ async function logIn(req,res){
 
             // Genero el token para guardarlo en una cookie
 
-            const token = JsonWebToken.sign({mail: data.email},
+            const token = JsonWebToken.sign({mail: data.email, nombre: resultado[0][0].nombre},
                 process.env.JWT_SECRET,
                 {expiresIn: process.env.JWT_EXPIRATION}
             );

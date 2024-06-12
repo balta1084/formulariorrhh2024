@@ -12,6 +12,7 @@ const {promocionesRoutes} = require('./routes/promociones.routes');
 const {contactoRoutes} = require('./routes/contacto.routes');
 const {loginRoutes} = require('./routes/login.routes');
 const {registroRoutes} = require('./routes/registro.routes');
+const {verificarIdentidadRoutes} = require('./routes/verificar_identidad.routes')
 
 app.set('port', process.env.PORT || 3000);
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cookieParser())
 
 // Usando los routes en la app
+app.use(verificarIdentidadRoutes);
 app.use(indexRoutes);
 app.use(menuRoutes);
 app.use(promocionesRoutes);
