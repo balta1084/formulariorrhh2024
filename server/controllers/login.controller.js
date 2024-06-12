@@ -1,6 +1,7 @@
 const path = require('path');
 const {conectar} = require('../config/db');
 const { comparar } = require('../modulos/funciones');
+const JsonWebToken = require('jsonwebtoken');
 
 // Funcion para enviar los archivos estaticos
 
@@ -56,11 +57,29 @@ async function logIn(req,res){
 
         const encryptPassword = resultado[0][0].password;
 
-        const verificar = await comparar(data.pass, encryptPassword)
+        const verificar = await comparar(data.pass, encryptPassword);
 
         if(verificar){
 
-            return res.status(200).json({message: `Bienvenido ${data.email}`, href: '/'})
+            // Genero el token para guardarlo en una cookie
+
+            const token = JsonWebToken.sign({mail: data.email},
+                process.env.JWT_SECRET,
+                {expiresIn: process.env.JWT_EXPIRATION}
+            );
+
+            const cookieOpt = {
+
+                expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
+                path: '/'
+
+            };
+
+            //Envio como respuesta la cookie y luego la respuesta del servidor
+
+            res.cookie('jwt', token, cookieOpt);
+
+            return res.status(200).json({message: `Bienvenido ${data.email}`, href: '/'});
 
         }else{
 
