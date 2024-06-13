@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async e=> {
 
     try{
 
-        const response = await fetch('verificar_user', {
+        const response = await fetch('/verificar_user', {
 
             method: 'POST',
             headers: {
