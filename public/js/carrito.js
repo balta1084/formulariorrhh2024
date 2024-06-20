@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let carritos = JSON.parse(localStorageJson)
 
+    console.log(carritos)
+
     if(carritos == null){
         return
     }
@@ -55,28 +57,98 @@ document.addEventListener('DOMContentLoaded', () => {
     carritos.forEach(function (carrito){
 
         const menuDiv = document.createElement('div');
-        menuDiv.classList.add('elementoCarrito')
+        menuDiv.classList.add('elementoCarrito');
+        
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'x';
+        menuDiv.appendChild(botonEliminar);
 
-        const img = document.createElement('img')
-        img.src = carrito.imagen
-        img.width = 100
-        img.height = 100
-        menuDiv.appendChild(img);
+        botonEliminar.addEventListener('click', (e) => {
 
-        const divElemento = document.createElement('div')
-        divElemento.classList.add('nombrePrecio')
+          const respuesta = confirm(`Desea eliminar ${carrito.nombre}`)
 
-        const nombre = document.createElement('p');
-        nombre.textContent = carrito.nombre;
-        divElemento.appendChild(nombre);
+          if(respuesta){
+
+            alert('Eliminado');
+
+            menuDiv.remove();
+            actualizarTotal();
+
+          }else{
+
+            return
+
+          }
+
+        })
+
+          const img = document.createElement('img')
+          img.src = carrito.imagen
+          img.width = 100
+          img.height = 100
+          menuDiv.appendChild(img);
+
+          const divElemento = document.createElement('div')
+          divElemento.classList.add('nombrePrecio')
+
+          const nombre = document.createElement('p');
+          nombre.textContent = carrito.nombre;
+          divElemento.appendChild(nombre);
     
-        const precio = document.createElement('p');
-        precio.textContent = "$" + carrito.precio;
-        divElemento.appendChild(precio);
+          const precio = document.createElement('p');
+          precio.textContent = "$" + carrito.precio;
+          divElemento.appendChild(precio);
 
-        menuDiv.appendChild(divElemento)
+          const unidades = document.createElement('div');
 
-        acumulador += parseFloat(carrito.precio)
+            const sumar = document.createElement('button');
+            sumar.textContent = '+';
+            unidades.appendChild(sumar);
+
+            const restar = document.createElement('button');
+            restar.textContent = '-';
+            restar.disabled = true;
+            unidades.appendChild(restar)
+
+            let i = 1
+
+            const unidad = document.createElement('h3');
+            unidad.textContent = `${i} unidades`;
+            unidades.appendChild(unidad);
+
+            sumar.addEventListener('click', e=> {
+
+              i++;
+              unidad.textContent = `${i} unidades`;
+              precio.textContent = `$${carrito.precio * i}`;
+
+              actualizarTotal();
+
+              if (i > 1) {
+                restar.disabled = false;
+            }
+
+            })
+
+            restar.addEventListener('click', e => {
+              if (i > 1) {
+                  i--;
+                  unidad.textContent = `${i} unidades`;
+                  precio.textContent = `$${carrito.precio * i}`;
+
+                  actualizarTotal();
+
+              }else if(i === 1){
+
+                restar.disabled = true;
+
+              }
+          });
+
+          menuDiv.appendChild(divElemento)
+          menuDiv.appendChild(unidades)
+
+        acumulador += parseFloat(carrito.precio * i)
     
         contenido.appendChild(menuDiv);
 
@@ -114,3 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 });
+
+// Funcion para actualizar el total cada vez que se agregan, restan unidades o se eliminan elementos del carrito
+
+function actualizarTotal() {
+  acumulador = 0;
+  const elementosCarrito = document.querySelectorAll('.elementoCarrito');
+  elementosCarrito.forEach(elemento => {
+      const unidades = parseInt(elemento.querySelector('h3').textContent);
+      const precioUnitario = parseFloat(elemento.querySelector('.nombrePrecio p:nth-child(2)').textContent.slice(1)) / unidades;
+      acumulador += unidades * precioUnitario;
+  });
+  total.textContent = `Total: $${acumulador.toFixed(2)}`;
+}

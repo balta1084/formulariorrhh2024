@@ -70,7 +70,16 @@ document.addEventListener('DOMContentLoaded', async (e)=> {
                     boton.id = `boton_${contador}`;
                     boton.classList.add('price');
                     boton.classList.add('buttonPrice');
-                    boton.textContent = 'Agregar al carrito'
+                    boton.textContent = 'Agregar al carrito';
+
+                    //Funcionalidad del boton
+
+                    boton.addEventListener('click', (e)=>{
+
+                        agregarComida(producto.imagen, producto.nombre, producto.precio)
+
+                
+                    })
 
             //Anidando elementos creados
 
@@ -103,24 +112,6 @@ document.addEventListener('DOMContentLoaded', async (e)=> {
 
             contador ++;
         });
-
-    }
-
-    // Se recorren todos los elementos de los platos el menu para guardarlos en el localstorage cuando se presiona click en "pedilo ya"
-
-    for(i = 0 ; i<10 ; i++){
-
-        const boton = document.getElementById(`boton${i}`);
-        const imagen = document.getElementById(`menu${i}`).src;
-        const nombre = document.getElementById(`nombre${i}`).textContent;
-        const precio = convertirPrecio(`precio${i}`)
-
-        boton.addEventListener('click', (e)=>{
-            alert()
-
-            agregarComida(imagen, nombre, precio)
-    
-        })
 
     }
 
@@ -166,10 +157,11 @@ function agregarComida(imagen, nombre, precio){
     let carrito = storageString ? JSON.parse(storageString) : [];
 
     let objeto = {
-
+        
         imagen: imagen,
         nombre: nombre,
         precio: precio,
+        cantidad: 1
 
     }
 
@@ -194,7 +186,7 @@ function convertirPrecio(id) {
     for(let i = 0; i < precio.length; i++) {
         let letra = precio[i];
 
-        if(letra !== '.' && letra !== '$') {
+        if(letra !== '$') {
             precioConvertido += letra;
         }
     }
