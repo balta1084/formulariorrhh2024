@@ -12,7 +12,8 @@ const {promocionesRoutes} = require('./routes/promociones.routes');
 const {contactoRoutes} = require('./routes/contacto.routes');
 const {loginRoutes} = require('./routes/login.routes');
 const {registroRoutes} = require('./routes/registro.routes');
-const {verificarIdentidadRoutes} = require('./routes/verificar_identidad.routes')
+const {verificarIdentidadRoutes} = require('./routes/verificar_identidad.routes');
+const {adminRoutes} = require('./routes/admin.routes')
 
 app.set('port', process.env.PORT || 3000);
 
@@ -30,6 +31,7 @@ app.use(promocionesRoutes);
 app.use(contactoRoutes);
 app.use(loginRoutes);
 app.use(registroRoutes);
+app.use(adminRoutes);
 
 module.exports = {
 

@@ -1,4 +1,4 @@
-const {verificarUser} = require('../modulos/funciones')
+const {verificarUser, obtenerRol} = require('../modulos/funciones')
 
 async function userLoginReg(req,res,next){
 
@@ -16,9 +16,40 @@ async function userLoginReg(req,res,next){
 
 };
 
+async function adminPass(req,res){
+
+    const rol = await obtenerRol(req);
+
+    if(rol === 'Admin'){
+
+        return res.redirect('/admin')
+
+    }else{
+
+        return next()
+
+    }
+
+}
+
+async function userNotPass(req,res){
+
+    const rol = await obtenerRol(req);
+
+    if(rol !== 'Admin'){
+
+        return res.redirect('/')
+
+    }else{
+
+        return next()
+
+    }
+
+}
 
 module.exports = {
 
-    userLoginReg
+    userLoginReg, adminPass, userNotPass
 
 }

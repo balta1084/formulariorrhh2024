@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/verificar.js"></script>
+    <script src="../js/admin.js"></script>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+          <span> GreenEats!</span>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/menu">Menú</a></li>
+            <li><a href="/promociones">Promociones</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li id="admin" class="invisible"><a href="/admin">Admin</a></li>
+            <li id="listaLogin"><a href="/login">Login</a></li>
+            <li id="listaReg"><a href="/registrarse">Registrarse</a></li>
+            <li id="bienvenida" class="invisible"></li>
+            <li id="listaCerrarSesion" class="invisible"><button id="cerrarSesion">Cerrar Sesion</button></li>
+            <li id="mostrarCarrito">
+              <a href="#"><i class="fa-solid fa-box-open"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <h2 id="bienvenida"></h2>
+
+    <div id="tabla"></div>
+    
+</body>
+</html>

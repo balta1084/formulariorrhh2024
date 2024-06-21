@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const indexRoutes = Router();
-const {indexHTML, indexJS} = require('../controllers/index.cotroller');
+const {indexHTML} = require('../controllers/index.cotroller');
 const {cssGeneral, carritoJS} = require('../controllers/general.controller');
-const {soloUser} = require('../middlewares/authentication')
 
 //GET de Archivos Estaticos
 

@@ -9,7 +9,8 @@ CREATE TABLE Usuarios (
     apellido VARCHAR(50),
     dni VARCHAR(20) UNIQUE,
     mail VARCHAR(100) UNIQUE,
-    password VARCHAR(255)
+    password VARCHAR(255),
+    rol varchar(25),
 );
 
 -- Crear la tabla Productos

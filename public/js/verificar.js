@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', async e=> {
     const listaReg = document.getElementById('listaReg');
     const bienvenida = document.getElementById('bienvenida');
     const listaCerrarSesion = document.getElementById('listaCerrarSesion');
-    const cerrarSesion = document.getElementById('cerrarSesion')
+    const listaAdmin = document.getElementById('admin');
+    const cerrarSesion = document.getElementById('cerrarSesion');
 
     try{
 
@@ -32,6 +33,12 @@ document.addEventListener('DOMContentLoaded', async e=> {
                 bienvenida.classList.remove('invisible');
                 bienvenida.textContent = `Bienvenido/a ${respuesta.nombre}`;
                 listaCerrarSesion.classList.remove('invisible');
+
+                if(respuesta.rol === 'Admin'){
+
+                    listaAdmin.classList.remove('invisible');
+
+                };
 
                 cerrarSesion.addEventListener('click', e => {
 

@@ -88,8 +88,32 @@ async function obtenerIDUser(req){
 
 }
 
+async function obtenerRol(req){
+
+    // Se obtiene la cookie del navegador y de allí el mail para buscarlo en la db
+
+    const cookieJWT = req.headers.cookie.split('; ').find(cookie => cookie.startsWith('jwt=')).slice(4);
+
+    const cookieDecodificada = JsonWebToken.verify(cookieJWT,process.env.JWT_SECRET);
+
+    const mail = cookieDecodificada.mail;
+
+    // Me conecto con la db para buscar a ese usuario, si hay resultado retorno un true, sino un false
+
+    const pool = await conectar();
+
+    const query = `SELECT rol FROM usuarios WHERE mail = ?`;
+
+    const busqueda = await pool.query(query, mail);
+
+    const rol = busqueda[0][0].rol
+
+    return rol
+
+}
+
 module.exports = {
 
-    encrypt, comparar, verificarUser, obtenerIDUser
+    encrypt, comparar, verificarUser, obtenerIDUser, obtenerRol
 
 }
