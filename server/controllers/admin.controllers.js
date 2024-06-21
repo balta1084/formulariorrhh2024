@@ -16,14 +16,9 @@ function adminJS(req,res){
 
 };
 
-async function publicaciones(req,res){
-
-    
-
-}
 
 module.exports = {
 
-    adminHTML, adminJS, publicaciones
+    adminHTML, adminJS
 
 }
