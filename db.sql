@@ -22,16 +22,25 @@ CREATE TABLE Productos (
     precio DECIMAL(10, 2)
 );
 
+-- Crear tabla intermedia de pedidos
+CREATE TABLE Pedidos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+)
+
 -- Crear la tabla Pedidos_Productos
 CREATE TABLE Pedidos_Productos (
-    pedido_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT,
     producto_id INT,
     cantidad INT,
-    total INT,
-    mail_id INT,
-    FOREIGN KEY (producto_id) REFERENCES Productos(id),
-    FOREIGN KEY (mail_id) REFERENCES Usuarios(id)
-    
+    precio_unitario DECIMAL(10, 2),
+    total DECIMAL(10, 2),
+    FOREIGN KEY (pedido_id) REFERENCES Pedidos(id),
+    FOREIGN KEY (producto_id) REFERENCES Productos(id)
 );
 
 INSERT INTO Productos (imagen, nombre, descripcion, tipo, precio) VALUES ('https://nomade-fd.com/wp-content/uploads/2023/05/Sous-vide-meat.png','Sous Vide Meat', 'Asado de costilla cocido a baja temperatura durante 4hs, acompañados de milhojas de papa', 'Plato principal', 9999.99);

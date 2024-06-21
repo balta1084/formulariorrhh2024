@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const menuRoutes = Router();
-const {menuHTML, productos} = require('../controllers/menu.controller');
+const {menuHTML, productos, pedir} = require('../controllers/menu.controller');
 const {cssGeneral, carritoJS, menuJS} = require('../controllers/general.controller');
 
 //GET de Archivos Estaticos
@@ -13,6 +13,10 @@ menuRoutes.get('/js/menu.js', menuJS);
 //GET de consultas
 
 menuRoutes.get('/productos', productos)
+
+//POST
+
+menuRoutes.post('/pedidos', pedir)
 
 module.exports = {
 

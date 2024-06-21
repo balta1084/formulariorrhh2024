@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let carritos = JSON.parse(localStorageJson)
 
-    console.log(carritos)
-
     if(carritos == null){
         return
     }
@@ -72,6 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Eliminado');
 
             menuDiv.remove();
+
+            let storageString = localStorage.getItem('carrito');
+            let carritoStorage = JSON.parse(storageString);
+            let carritoNuevo = []
+
+            carritoStorage.forEach(elemento => {
+
+              if(elemento.id !== carrito.id){
+
+                carritoNuevo.push(elemento)
+
+              }
+
+              })
+
+            let jsonCarrito = JSON.stringify(carritoNuevo);
+
+            localStorage.setItem('carrito', jsonCarrito);
+
             actualizarTotal();
 
           }else{
@@ -107,38 +124,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const restar = document.createElement('button');
             restar.textContent = '-';
-            restar.disabled = true;
+            if(carrito.cantidad === 1){
+
+              restar.disabled = true;
+
+            }
             unidades.appendChild(restar)
 
-            let i = 1
-
             const unidad = document.createElement('h3');
-            unidad.textContent = `${i} unidades`;
+            unidad.textContent = `${carrito.cantidad} unidades`;
             unidades.appendChild(unidad);
 
             sumar.addEventListener('click', e=> {
 
-              i++;
-              unidad.textContent = `${i} unidades`;
-              precio.textContent = `$${carrito.precio * i}`;
+              carrito.cantidad++;
+              unidad.textContent = `${carrito.cantidad} unidades`;
+              precio.textContent = `$${carrito.precio * carrito.cantidad}`;
+
+              let storageString = localStorage.getItem('carrito');
+              let carritoStorage = JSON.parse(storageString);
+
+              carritoStorage.forEach(elemento => {
+
+                if(elemento.id === carrito.id){
+
+                  elemento.cantidad = carrito.cantidad;
+
+                  let jsonCarrito = JSON.stringify(carritoStorage);
+
+                  localStorage.setItem('carrito', jsonCarrito);
+
+                }
+
+              })
 
               actualizarTotal();
 
-              if (i > 1) {
+              if (carrito.cantidad > 1) {
                 restar.disabled = false;
             }
 
             })
 
             restar.addEventListener('click', e => {
-              if (i > 1) {
-                  i--;
-                  unidad.textContent = `${i} unidades`;
-                  precio.textContent = `$${carrito.precio * i}`;
+              if (carrito.cantidad > 1) {
+                  carrito.cantidad--;
+                  unidad.textContent = `${carrito.cantidad} unidades`;
+                  precio.textContent = `$${carrito.precio * carrito.cantidad}`;
 
-                  actualizarTotal();
+                  let storageString = localStorage.getItem('carrito');
+                  let carritoStorage = JSON.parse(storageString);
+    
+                  carritoStorage.forEach(elemento => {
+    
+                    if(elemento.id === carrito.id){
+    
+                      elemento.cantidad = carrito.cantidad;
+    
+                      let jsonCarrito = JSON.stringify(carritoStorage);
+    
+                      localStorage.setItem('carrito', jsonCarrito);
 
-              }else if(i === 1){
+                    }
+    
+                    })
+
+                    actualizarTotal();
+              
+
+              }else if(carrito.cantidad === 1){
 
                 restar.disabled = true;
 
@@ -148,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
           menuDiv.appendChild(divElemento)
           menuDiv.appendChild(unidades)
 
-        acumulador += parseFloat(carrito.precio * i)
+        acumulador += parseFloat(carrito.precio * carrito.cantidad)
     
         contenido.appendChild(menuDiv);
 
@@ -174,15 +228,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(confirmarPedido){
 
-      confirmarPedido.addEventListener('click', e=>{
+      confirmarPedido.addEventListener('click', async e=>{
 
-        alert('Tu pedido está en camino')
+        let storageString = localStorage.getItem('carrito');
 
-        localStorage.removeItem('carrito')
+        let carrito = JSON.parse(storageString);
 
-        return location.reload();
+        try{
 
-      })
+          const response = await fetch('/pedidos', {
+
+            method: 'POST',
+            headers: {
+
+              'Content-Type': 'application/json'
+
+            },
+
+            body: JSON.stringify(carrito)
+
+          });
+
+          if(response.ok){
+
+            const respuesta = await response.json();
+
+            alert(respuesta.message);
+
+            localStorage.removeItem('carrito');
+    
+            return location.reload();
+
+          }else{
+
+            const respuesta = await response.json();
+
+            alert(respuesta.message);
+
+            return window.location.href = respuesta.href;
+
+          }
+
+
+        }catch(error){
+
+          return console.error('Error al procesar consulta: ', error);
+
+        };
+
+
+      });
 
     }
 });

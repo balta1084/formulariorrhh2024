@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async (e)=> {
 
                     boton.addEventListener('click', (e)=>{
 
-                        agregarComida(producto.imagen, producto.nombre, producto.precio)
+                        agregarComida(producto.id, producto.imagen, producto.nombre, producto.precio)
 
                 
                     })
@@ -115,7 +115,6 @@ document.addEventListener('DOMContentLoaded', async (e)=> {
 
     }
 
-    console.log(localStorage.getItem('carrito'))
 })
 
 async function obtenerPoductos(){
@@ -149,7 +148,7 @@ async function obtenerPoductos(){
 
 }
 
-function agregarComida(imagen, nombre, precio){
+function agregarComida(id, imagen, nombre, precio){
 
 
     let storageString = localStorage.getItem('carrito');
@@ -158,12 +157,31 @@ function agregarComida(imagen, nombre, precio){
 
     let objeto = {
         
+        id: id,
         imagen: imagen,
         nombre: nombre,
         precio: precio,
         cantidad: 1
 
     }
+
+    carrito.forEach(elemento => {
+
+        if(elemento.id === objeto.id){
+
+            elemento.cantidad ++;
+
+            let jsonCarrito = JSON.stringify(carrito);
+
+            localStorage.setItem('carrito', jsonCarrito);
+
+            alert(`Agregaste una unidad del ${elemento.nombre}`);
+
+            return location.reload()
+
+        }
+
+    })
 
     carrito.push(objeto)
 
