@@ -127,7 +127,7 @@ function mostrarTabla(productos){
 
                 botonActualizar.addEventListener('click', e=> {
 
-                    alert('En construccion')
+                    window.location.href =`/admin/editar/${producto.id}`
 
                 })
 
