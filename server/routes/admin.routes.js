@@ -1,7 +1,8 @@
 const { Router } = require('express');
 const adminRoutes = Router();
 const {adminHTML, adminJS, obtenerPubli} = require('../controllers/admin.controllers');
-const {editarPublicacionHTML, editarPublicacionJS, actualizarPubli} = require('../controllers/editar_publicacion.controllers')
+const {editarPublicacionHTML, editarPublicacionJS, actualizarPubli} = require('../controllers/editar_publicacion.controllers');
+const {uploads} = require('../middlewares/uploads_images')
 
 //GET de Archivos Estaticos
 
@@ -17,7 +18,7 @@ adminRoutes.get('/productos/:id', obtenerPubli);
 
 // UPDATE Publis
 
-adminRoutes.put('/productos/:id', actualizarPubli)
+adminRoutes.post('/productos/:id', uploads.single('imagen'), actualizarPubli)
 
 module.exports = {
 

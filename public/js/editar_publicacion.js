@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async e=> {
     const tipo = document.getElementById('tipo');
     const precio = document.getElementById('precio');
     const actualizar = document.getElementById('botonActualizar');
+    const form = document.getElementById('formActualizar')
 
     // Haciendo la llamada a la api para obtener informacion de un producto
 
@@ -52,28 +53,19 @@ document.addEventListener('DOMContentLoaded', async e=> {
 
     actualizar.addEventListener('click', async e=>{
 
-        const datos = {
+        e.preventDefault()
 
-            id: id,
-            imagen: imagen.value,
-            nombre: nombre.value,
-            descripcion: descripcion.value,
-            tipo: tipo.value,
-            precio: precio.value,
+        const formData = new FormData(form);
+        formData.append('id', id);
 
-        };
+        console.log(formData)
 
         try{
 
             const response = await fetch(`/productos/${id}`, {
 
-                method: 'PUT',
-                headers: {
-                
-                    'Content-Type': 'application/json'
-
-                },
-                body: JSON.stringify(datos)
+                method: 'POST',
+                body: formData
 
 
             });
@@ -96,8 +88,5 @@ document.addEventListener('DOMContentLoaded', async e=> {
         }
 
     })
-
-
-
 
 })

@@ -1,4 +1,5 @@
-const {verificarUser, obtenerRol} = require('../modulos/funciones')
+const {verificarUser, obtenerRol} = require('../modulos/funciones');
+
 
 async function userLoginReg(req,res,next){
 
@@ -16,7 +17,7 @@ async function userLoginReg(req,res,next){
 
 };
 
-async function adminPass(req,res){
+async function adminPass(req,res,next){
 
     const rol = await obtenerRol(req);
 
@@ -32,7 +33,7 @@ async function adminPass(req,res){
 
 }
 
-async function userNotPass(req,res){
+async function userNotPass(req,res,next){
 
     const rol = await obtenerRol(req);
 
@@ -48,8 +49,10 @@ async function userNotPass(req,res){
 
 }
 
+
+
 module.exports = {
 
-    userLoginReg, adminPass, userNotPass
+    userLoginReg, adminPass, userNotPass,
 
 }

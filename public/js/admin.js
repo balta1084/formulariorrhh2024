@@ -109,6 +109,8 @@ function mostrarTabla(productos){
                 const tdCategoria = document.createElement('td');
                 const tdAcciones = document.createElement('td');
 
+                console.log(imagen)
+
                 const botonActualizar = document.createElement('button');
                 const botonEliminar = document.createElement('button');
 

@@ -66,29 +66,41 @@ async function verificarUser(req){
 
 async function obtenerIDUser(req){
 
-        // Se obtiene la cookie del navegador y de allí el mail para buscarlo en la db
-
-        const cookieJWT = req.headers.cookie.split('; ').find(cookie => cookie.startsWith('jwt=')).slice(4);
-
-        const cookieDecodificada = JsonWebToken.verify(cookieJWT,process.env.JWT_SECRET);
+    if(!req.headers.cookie){
     
-        const mail = cookieDecodificada.mail;
-    
-        // Me conecto con la db para buscar a ese usuario, si hay resultado retorno un true, sino un false
-    
-        const pool = await conectar();
-    
-        const query = `SELECT id FROM usuarios WHERE mail = ?`;
+        return false
 
-        const busqueda = await pool.query(query, mail);
+    }
+    // Se obtiene la cookie del navegador y de allí el mail para buscarlo en la db
 
-        const id = busqueda[0][0].id
+    const cookieJWT = req.headers.cookie.split('; ').find(cookie => cookie.startsWith('jwt=')).slice(4);
 
-        return id
+    const cookieDecodificada = JsonWebToken.verify(cookieJWT,process.env.JWT_SECRET);
+
+    const mail = cookieDecodificada.mail;
+
+    // Me conecto con la db para buscar a ese usuario, si hay resultado retorno un true, sino un false
+
+    const pool = await conectar();
+
+    const query = `SELECT id FROM usuarios WHERE mail = ?`;
+
+    const busqueda = await pool.query(query, mail);
+
+    const id = busqueda[0][0].id
+
+    return id
 
 }
 
 async function obtenerRol(req){
+
+    
+    if(!req.headers.cookie){
+    
+        return false
+
+    }
 
     // Se obtiene la cookie del navegador y de allí el mail para buscarlo en la db
 

@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const cors = require('cors');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const path = require('path')
 dotenv.config();
 
 // Importacion de Routes
@@ -13,15 +14,19 @@ const {contactoRoutes} = require('./routes/contacto.routes');
 const {loginRoutes} = require('./routes/login.routes');
 const {registroRoutes} = require('./routes/registro.routes');
 const {verificarIdentidadRoutes} = require('./routes/verificar_identidad.routes');
-const {adminRoutes} = require('./routes/admin.routes')
+const {adminRoutes} = require('./routes/admin.routes');
 
 app.set('port', process.env.PORT || 3000);
 
 //Configurando los cors
 
 app.use(cors());
-app.use(express.json());
-app.use(cookieParser())
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use('/uploads', express.static(path.join(__dirname, '../public/assets/uploads')))
+
+app.use(cookieParser());
+
 
 // Usando los routes en la app
 app.use(verificarIdentidadRoutes);
