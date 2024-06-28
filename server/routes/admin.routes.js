@@ -18,7 +18,7 @@ adminRoutes.get('/productos/:id', obtenerPubli);
 
 // UPDATE Publis
 
-adminRoutes.post('/productos/:id', uploads.single('imagen'), actualizarPubli)
+adminRoutes.put('/productos/:id', uploads.single('imagen'), actualizarPubli)
 
 // POST Publis
 

@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async e=> {
 
             const response = await fetch(`/productos/${id}`, {
 
-                method: 'POST',
+                method: 'PUT',
                 body: formData
 
 
