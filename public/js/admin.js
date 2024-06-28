@@ -121,7 +121,7 @@ function mostrarTabla(productos){
             // Se generan los encabezados
         
             const thead = document.createElement('thead');
-            const encabezados = ['ID','Imagen', 'Nombre', 'Descripcion', 'Precio','Categoria','Acciones'];
+            const encabezados = ['ID','Imagen', 'Nombre', 'Descripcion', 'Precio','Categoria','Estado' ,'Acciones'];
         
             const encabezadosRow = document.createElement('tr');
         
@@ -152,16 +152,15 @@ function mostrarTabla(productos){
                 const tdDescripcion = document.createElement('td');
                 const tdPrecio = document.createElement('td');
                 const tdCategoria = document.createElement('td');
+                const tdEstado = document.createElement('td');
                 const tdAcciones = document.createElement('td');
 
-                console.log(imagen)
-
                 const botonActualizar = document.createElement('button');
-                const botonEliminar = document.createElement('button');
+                const botonCambiarEstado = document.createElement('button');
 
                 tdImagen.appendChild(imagen);
                 tdAcciones.appendChild(botonActualizar);
-                tdAcciones.appendChild(botonEliminar);
+                tdAcciones.appendChild(botonCambiarEstado);
 
                 tdID.textContent = producto.id;
                 imagen.src = producto.imagen;
@@ -169,8 +168,27 @@ function mostrarTabla(productos){
                 tdDescripcion.textContent = producto.descripcion;
                 tdPrecio.textContent = `$${producto.precio}`;
                 tdCategoria.textContent = producto.tipo;
+                if(producto.estado === 1){
+
+                    tdEstado.textContent = 'Activo';
+                
+                }else{
+
+                    tdEstado.textContent = 'Inactivo'
+
+                }
+
                 botonActualizar.textContent = 'Editar';
-                botonEliminar.textContent = 'Eliminar';
+                if(producto.estado === 1){
+
+                    botonCambiarEstado.textContent = 'Deshabilitar';
+
+                }else{
+
+                    botonCambiarEstado.textContent = 'Habilitar';
+
+                }
+
 
                 botonActualizar.addEventListener('click', e=> {
 
@@ -178,9 +196,63 @@ function mostrarTabla(productos){
 
                 })
 
-                botonEliminar.addEventListener('click', e=> {
+                botonCambiarEstado.addEventListener('click', async e=> {
 
-                    alert('En construccion')
+                    const confirmar = confirm(`Desea eliminar la publicacion ${producto.nombre} con ID: ${producto.id}?`)
+
+                    if(confirmar){
+
+                        const datos = {
+
+                            id: producto.id
+
+                        }
+
+                        try{
+
+                            const response = await fetch(`/eliminar/producto`, {
+
+                                method: 'DELETE',
+
+                                headers: {
+
+                                    'Content-Type': 'application/json'
+
+                                },
+
+                                body: JSON.stringify(datos)
+
+                            });
+
+                            if(response.ok){
+
+                                const respuesta = await response.json();
+
+                                alert(respuesta.message);
+
+                                return window.location.reload()
+
+                            }else{
+
+                                const respuesta = await response.json();
+
+                                console.log(respuesta)
+
+                            }
+
+
+
+                        }catch(error){
+    
+                            return console.error('Error al eliminar ', error)
+    
+                        }
+
+                    }else{
+
+                        return
+
+                    }
 
                 })
 
@@ -190,6 +262,7 @@ function mostrarTabla(productos){
                 fila.appendChild(tdDescripcion);
                 fila.appendChild(tdPrecio);
                 fila.appendChild(tdCategoria);
+                fila.appendChild(tdEstado);
                 fila.appendChild(tdAcciones);
 
                 tbody.appendChild(fila);

@@ -53,17 +53,27 @@ async function actualizarPubli(req,res){
 
             const rutaImagenGuardada = path.join(__dirname, '../../public/assets', rutaImagenDB);
         
-            fs.unlink(rutaImagenGuardada, async (err) => {
+            fs.access(rutaImagenGuardada, fs.constants.F_OK, (err) => {
 
-                if(err){
+                if(!err){
 
-                    await pool.end();
-                    console.error('Error al eliminar la imagen', err);
-                    return res.status(500).json({message: 'Error al eliminar la imagen anterior'})
+                    fs.unlink(rutaImagenGuardada, async (err) => {
+
+                        if(err){
+        
+                            await pool.end();
+                            console.error('Error al eliminar la imagen', err);
+                            return res.status(500).json({message: 'Error al eliminar la imagen anterior'})
+        
+                        }
+        
+                    })
 
                 }
 
             })
+
+
 
             const queryUpdate = `UPDATE productos SET imagen = ?, nombre = ?, descripcion = ?, tipo = ?, precio = ? WHERE id = ?`;
 

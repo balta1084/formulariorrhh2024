@@ -15,103 +15,106 @@ document.addEventListener('DOMContentLoaded', async (e)=> {
     if(productos){
 
         productos.forEach(producto => {
+
+            if(producto.estado === 1){
             
-            //Definiendo el div contenedor de la tarjeta
-            const carta = document.createElement('div');
-            carta.classList.add('card');
+                //Definiendo el div contenedor de la tarjeta
+                const carta = document.createElement('div');
+                carta.classList.add('card');
 
-                //Definiendo la imagen y atributos de la misma
-                const imgProducto = document.createElement('img');
-                imgProducto.id = `menu_${contador}`;
-                imgProducto.src = producto.imagen;
-                imgProducto.alt = `postre ${producto.nombre}`;
+                    //Definiendo la imagen y atributos de la misma
+                    const imgProducto = document.createElement('img');
+                    imgProducto.id = `menu_${contador}`;
+                    imgProducto.src = producto.imagen;
+                    imgProducto.alt = `postre ${producto.nombre}`;
 
-                //Definiento el cuerpo y clase de la tarjeta
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
+                    //Definiento el cuerpo y clase de la tarjeta
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
 
-                    //Definiendo el contenedor del nombre
-                    const nombre = document.createElement('h3');
-                    nombre.id = `nombre_${contador}`;
-                    nombre.classList.add('card-title');
-                    nombre.textContent = producto.nombre;
+                        //Definiendo el contenedor del nombre
+                        const nombre = document.createElement('h3');
+                        nombre.id = `nombre_${contador}`;
+                        nombre.classList.add('card-title');
+                        nombre.textContent = producto.nombre;
 
-                    //Definiendo el contenedor flex
+                        //Definiendo el contenedor flex
 
-                    const contFlex = document.createElement('div');
-                    contFlex.classList.add('cont-flex')
+                        const contFlex = document.createElement('div');
+                        contFlex.classList.add('cont-flex')
 
-                        //Definiento el contenedor de la descripcion
+                            //Definiento el contenedor de la descripcion
 
-                        const contCardDescription = document.createElement('div');
-                        contCardDescription.classList.add('cont-card-description');
+                            const contCardDescription = document.createElement('div');
+                            contCardDescription.classList.add('cont-card-description');
 
-                            //Definiendo el contenedor la descripion del producto
+                                //Definiendo el contenedor la descripion del producto
 
-                            const descriptionFood = document.createElement('div');
-                            descriptionFood.classList.add('description-food');
+                                const descriptionFood = document.createElement('div');
+                                descriptionFood.classList.add('description-food');
 
-                                //Definiento la descripcion
+                                    //Definiento la descripcion
 
-                                const descripcion = document.createElement('div');
-                                const spanDescripcion = document.createElement('span');
-                                spanDescripcion.textContent = producto.descripcion;
+                                    const descripcion = document.createElement('div');
+                                    const spanDescripcion = document.createElement('span');
+                                    spanDescripcion.textContent = producto.descripcion;
 
-                                // Definiento el precio
+                                    // Definiento el precio
 
-                                const precio = document.createElement('div');
-                                const spanPrecio = document.createElement('span');
-                                spanPrecio.id = `precio_${contador}`
-                                spanPrecio.textContent = `$${producto.precio}`;
+                                    const precio = document.createElement('div');
+                                    const spanPrecio = document.createElement('span');
+                                    spanPrecio.id = `precio_${contador}`
+                                    spanPrecio.textContent = `$${producto.precio}`;
 
-                    //Boton para agregar al carrito
+                        //Boton para agregar al carrito
 
-                    const boton = document.createElement('button');
-                    boton.id = `boton_${contador}`;
-                    boton.classList.add('price');
-                    boton.classList.add('buttonPrice');
-                    boton.textContent = 'Agregar al carrito';
+                        const boton = document.createElement('button');
+                        boton.id = `boton_${contador}`;
+                        boton.classList.add('price');
+                        boton.classList.add('buttonPrice');
+                        boton.textContent = 'Agregar al carrito';
 
-                    //Funcionalidad del boton
+                        //Funcionalidad del boton
 
-                    boton.addEventListener('click', (e)=>{
+                        boton.addEventListener('click', (e)=>{
 
-                        agregarComida(producto.id, producto.imagen, producto.nombre, producto.precio)
+                            agregarComida(producto.id, producto.imagen, producto.nombre, producto.precio)
 
-                
-                    })
+                    
+                        })
 
-            //Anidando elementos creados
+                //Anidando elementos creados
 
-            cardBody.appendChild(nombre);
-            cardBody.appendChild(contFlex);
-            cardBody.appendChild(boton)
+                cardBody.appendChild(nombre);
+                cardBody.appendChild(contFlex);
+                cardBody.appendChild(boton)
 
-            descripcion.appendChild(spanDescripcion);
-            precio.appendChild(spanPrecio);
+                descripcion.appendChild(spanDescripcion);
+                precio.appendChild(spanPrecio);
 
-            descriptionFood.appendChild(descripcion);
-            descriptionFood.appendChild(precio)
-            contCardDescription.appendChild(descriptionFood);
-            contFlex.appendChild(contCardDescription);
+                descriptionFood.appendChild(descripcion);
+                descriptionFood.appendChild(precio)
+                contCardDescription.appendChild(descriptionFood);
+                contFlex.appendChild(contCardDescription);
 
-            carta.appendChild(imgProducto);
-            carta.appendChild(cardBody)
+                carta.appendChild(imgProducto);
+                carta.appendChild(cardBody)
 
-            if(producto.tipo === 'Postre'){
+                if(producto.tipo === 'Postre'){
 
-                contenido_postres.appendChild(carta);
-                postres.appendChild(contenido_postres);
+                    contenido_postres.appendChild(carta);
+                    postres.appendChild(contenido_postres);
 
-            }else{
+                }else{
 
-                contenidoPlatosPrincipales.appendChild(carta);
-                platosPrincipales.appendChild(contenidoPlatosPrincipales)
+                    contenidoPlatosPrincipales.appendChild(carta);
+                    platosPrincipales.appendChild(contenidoPlatosPrincipales)
 
-            }
-
+                }
+        }
             contador ++;
         });
+
 
     }
 
