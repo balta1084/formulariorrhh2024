@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async e=> {
 
     // Identificando los elementos a completar
 
-    const imagen = document.getElementById('imagen');
     const nombre = document.getElementById('nombre');
     const descripcion = document.getElementById('descripcion');
     const tipo = document.getElementById('tipo');
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', async e=> {
         const formData = new FormData(form);
         formData.append('id', id);
 
-        console.log(formData)
 
         try{
 

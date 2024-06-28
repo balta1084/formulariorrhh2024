@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async e => {
 
     // Dandole la funcionalidad a los botones para buscar o agregar
 
-    buscar.addEventListener('click', e=> {
+    buscar.addEventListener('click', async e=> {
 
         seccionBuscar.classList.remove('invisible');
 
@@ -19,9 +19,41 @@ document.addEventListener('DOMContentLoaded', async e => {
 
         }
 
+        try{
+
+            // Fetch para busqueda
+    
+            const response = await fetch ('/productos', {
+    
+                method: 'GET',
+                headers: {
+    
+                    'Content-Type': 'application/json'
+    
+                }
+    
+    
+            })
+    
+            if(response.ok){
+    
+                const respuesta = await response.json()
+    
+                mostrarTabla(respuesta.productos)
+    
+            }
+    
+        }catch(error){
+    
+            return console.error('Error: ', error)
+    
+        }
+
     })
 
-    agregarPublis.addEventListener('click', e=>{
+    agregarPublis.addEventListener('click',async e=>{
+
+        e.preventDefault()
 
         seccionAgregar.classList.remove('invisible');
 
@@ -31,37 +63,50 @@ document.addEventListener('DOMContentLoaded', async e => {
 
         }
 
-    })
+        const guardar = document.getElementById('botonGuardar');
 
-    // Dandole la funcionalidad para traer las publicaciones guardadas
+        guardar.addEventListener('click', async e=> {
 
-    try{
+            try{
 
-        const response = await fetch ('/productos', {
+                e.preventDefault()
 
-            method: 'GET',
-            headers: {
+                const form = document.getElementById('formGuardar');
+    
+                const formData = new FormData(form)
+    
+                const response = await fetch('/producto', {
+    
+                    method: 'POST',
+                    body: formData
+    
+                });
+    
+                if(response.ok){
+    
+                    const respuesta = await response.json()
+                    
+                    alert(respuesta.message);
 
-                'Content-Type': 'application/json'
-
+                    window.location.href = respuesta.href
+    
+                }
+    
+    
+    
+            }catch(error){
+    
+                return console.error('Error: ', error)
+    
             }
 
 
         })
 
-        if(response.ok){
 
-            const respuesta = await response.json()
+    })
 
-            mostrarTabla(respuesta.productos)
 
-        }
-
-    }catch(error){
-
-        return console.error('Error: ', error)
-
-    }
 
 })
 

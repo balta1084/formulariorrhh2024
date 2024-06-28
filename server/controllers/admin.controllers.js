@@ -41,9 +41,44 @@ async function obtenerPubli(req,res){
 
 }
 
+async function agregarPubli(req,res){
+
+    const datos = req.body;
+
+    const imagen = req.file;
+
+    if(!imagen){
+
+        return res.status(400).json({message: 'Por favor carga la imagen'})
+
+    }
+
+    try{
+
+        const rutaDesarmada = imagen.path.split('\\').reverse();
+        const rutaImagen = `/${rutaDesarmada[1]}/${rutaDesarmada[0]}`
+
+        const pool = await conectar();
+
+        const queryAdd = `INSERT INTO productos (imagen, nombre, descripcion, tipo, precio) VALUES (?, ?, ?, ?, ?)`
+        const values = [rutaImagen, datos.nombre, datos.descripcion, datos.tipo, datos.precio]
+
+        await pool.query(queryAdd, values);
+
+        await pool.end();
+
+        return res.status(201).json({message: `${datos.nombre} guardado correctamente`, href: '/admin'})
+
+    }catch(error){
+
+        return console.error('Error: ', error)
+
+    }
+
+}
 
 module.exports = {
 
-    adminHTML, adminJS, obtenerPubli
+    adminHTML, adminJS, obtenerPubli, agregarPubli
 
 }
