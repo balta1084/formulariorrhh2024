@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const adminRoutes = Router();
-const {adminHTML, adminJS, obtenerPubli, agregarPubli, cambiarEstadoPubli} = require('../controllers/admin.controllers');
+const {adminHTML, adminJS, obtenerPubli, agregarPubli, cambiarEstadoPubli, eliminarProducto} = require('../controllers/admin.controllers');
 const {editarPublicacionHTML, editarPublicacionJS, actualizarPubli} = require('../controllers/editar_publicacion.controllers');
 const {uploads} = require('../middlewares/uploads_images')
 
@@ -23,10 +23,12 @@ adminRoutes.post('/producto', uploads.single('imagen'), agregarPubli);
 // UPDATE Publis
 
 adminRoutes.put('/productos/:id', uploads.single('imagen'), actualizarPubli);
+adminRoutes.put('/producto/cambiarEstado', cambiarEstadoPubli);
 
 // Eliminar Publi
 
-adminRoutes.delete('/eliminar/producto', cambiarEstadoPubli)
+adminRoutes.delete('/producto/eliminar', eliminarProducto)
+
 
 module.exports = {
 

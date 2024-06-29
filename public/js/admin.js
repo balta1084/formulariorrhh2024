@@ -157,10 +157,12 @@ function mostrarTabla(productos){
 
                 const botonActualizar = document.createElement('button');
                 const botonCambiarEstado = document.createElement('button');
+                const botonEliminar = document.createElement('button');
 
                 tdImagen.appendChild(imagen);
                 tdAcciones.appendChild(botonActualizar);
                 tdAcciones.appendChild(botonCambiarEstado);
+                tdAcciones.appendChild(botonEliminar);
 
                 tdID.textContent = producto.id;
                 imagen.src = producto.imagen;
@@ -176,7 +178,7 @@ function mostrarTabla(productos){
 
                     tdEstado.textContent = 'Inactivo'
 
-                }
+                };
 
                 botonActualizar.textContent = 'Editar';
                 if(producto.estado === 1){
@@ -187,16 +189,78 @@ function mostrarTabla(productos){
 
                     botonCambiarEstado.textContent = 'Habilitar';
 
-                }
+                };
+
+                botonEliminar.textContent = 'Eliminar';
 
 
                 botonActualizar.addEventListener('click', e=> {
 
                     window.location.href =`/admin/editar/${producto.id}`
 
-                })
+                });
 
                 botonCambiarEstado.addEventListener('click', async e=> {
+
+                    const confirmar = confirm(`Desea habilitar/deshabilitar la publicacion ${producto.nombre} con ID: ${producto.id}?`)
+
+                    if(confirmar){
+
+                        const datos = {
+
+                            id: producto.id
+
+                        }
+
+                        try{
+
+                            const response = await fetch(`/producto/cambiarEstado`, {
+
+                                method: 'PUT',
+
+                                headers: {
+
+                                    'Content-Type': 'application/json'
+
+                                },
+
+                                body: JSON.stringify(datos)
+
+                            });
+
+                            if(response.ok){
+
+                                const respuesta = await response.json();
+
+                                alert(respuesta.message);
+
+                                return window.location.reload()
+
+                            }else{
+
+                                const respuesta = await response.json();
+
+                                console.log(respuesta)
+
+                            }
+
+
+
+                        }catch(error){
+    
+                            return console.error('Error al cambiarEstado ', error)
+    
+                        }
+
+                    }else{
+
+                        return
+
+                    }
+
+                });
+
+                botonEliminar.addEventListener('click', async e=> {
 
                     const confirmar = confirm(`Desea eliminar la publicacion ${producto.nombre} con ID: ${producto.id}?`)
 
@@ -210,7 +274,7 @@ function mostrarTabla(productos){
 
                         try{
 
-                            const response = await fetch(`/eliminar/producto`, {
+                            const response = await fetch(`/producto/eliminar`, {
 
                                 method: 'DELETE',
 
@@ -244,7 +308,7 @@ function mostrarTabla(productos){
 
                         }catch(error){
     
-                            return console.error('Error al eliminar ', error)
+                            return console.error('Error al cambiarEstado ', error)
     
                         }
 
@@ -253,6 +317,7 @@ function mostrarTabla(productos){
                         return
 
                     }
+
 
                 })
 

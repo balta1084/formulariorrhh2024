@@ -1,5 +1,6 @@
 const path = require('path');
 const {conectar} = require('../config/db')
+const fs = require('fs')
 
 function adminHTML(req,res){
 
@@ -116,12 +117,68 @@ async function cambiarEstadoPubli(req,res){
 
         }
 
-
-
-
     }catch(error){
 
-        return res.status(400).json({message: 'Error al eliminar el producto'})
+        return res.status(400).json({message: 'Error al deshabilitar/habilitar el producto'})
+
+    }
+
+}
+
+async function eliminarProducto(req,res){
+
+    const {id} = req.body;
+
+    try{
+
+        const pool = await conectar();
+
+        const queryRead = `SELECT imagen FROM productos WHERE id = ?`;
+        const valuesRead = [id];
+
+        const busqueda = await pool.query(queryRead, valuesRead);
+
+        const rutaImagen = busqueda[0][0].imagen;
+
+        //Iniciando el reemplazo de ese id por null en las otras tablas
+
+        await pool.beginTransaction();
+
+        await pool.execute(`UPDATE pedidos_productos SET producto_id = ${null} WHERE producto_id = ?`, [id]);
+
+        await pool.execute(`DELETE FROM productos WHERE id = ?`, [id]);
+
+        await pool.commit();
+
+        const rutaImagenGuardada = path.join(__dirname, '../../public/assets', rutaImagen);
+
+        fs.access(rutaImagenGuardada, fs.constants.F_OK, (err) => {
+
+            if(!err){
+
+                fs.unlink(rutaImagenGuardada, async (err) => {
+
+                    if(err){
+    
+                        await pool.end();
+                        console.error('Error al eliminar la imagen', err);
+                        return res.status(500).json({message: 'Error al eliminar la imagen anterior'})
+    
+                    }
+    
+                })
+
+            }
+
+        })
+
+        await pool.end();
+
+        return res.status(200).json({message: `Producto eliminado correctamente`})
+    }catch(error){
+
+        console.error('Error: ', error)
+        return res.status(400).json({message: 'Error al eliminar el producto', error})
 
     }
 
@@ -129,6 +186,6 @@ async function cambiarEstadoPubli(req,res){
 
 module.exports = {
 
-    adminHTML, adminJS, obtenerPubli, agregarPubli, cambiarEstadoPubli
+    adminHTML, adminJS, obtenerPubli, agregarPubli, cambiarEstadoPubli, eliminarProducto
 
 }
