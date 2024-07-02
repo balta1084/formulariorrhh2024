@@ -21,9 +21,9 @@ async function adminPass(req,res,next){
 
     const rol = await obtenerRol(req);
 
-    if(rol === 'Admin'){
+    if(rol !== 'Admin'){
 
-        return res.redirect('/admin')
+        return res.status(403).send('Error 403 Forbidden')
 
     }else{
 
@@ -33,13 +33,13 @@ async function adminPass(req,res,next){
 
 }
 
-async function userNotPass(req,res,next){
+async function SoloUser(req,res,next){
 
-    const rol = await obtenerRol(req);
+    const user = await verificarUser(req);
 
-    if(rol !== 'Admin'){
+    if(!user){
 
-        return res.redirect('/')
+        return res.redirect('/login')
 
     }else{
 
@@ -53,6 +53,6 @@ async function userNotPass(req,res,next){
 
 module.exports = {
 
-    userLoginReg, adminPass, userNotPass,
+    userLoginReg, adminPass, SoloUser,
 
 }

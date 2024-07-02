@@ -45,7 +45,7 @@ async function logIn(req,res){
 
         const resultado = await pool.query(query, data.email);
 
-        await pool.close()
+        await pool.end();
 
         if(!resultado[0][0]){
 

@@ -1,12 +1,12 @@
 const { Router } = require('express');
 const loginRoutes = Router();
 const {loginHTML, loginJS, logIn} = require('../controllers/login.controller');
-const {userLoginReg, adminPass} = require('../middlewares/authentication')
+const {userLoginReg} = require('../middlewares/authentication')
 
 //GET de Archivos Estaticos
 
-loginRoutes.get('/login', userLoginReg, adminPass, loginHTML);
-loginRoutes.get('/js/login.js', loginJS)
+loginRoutes.get('/login', userLoginReg, loginHTML);
+loginRoutes.get('/js/login.js', userLoginReg, loginJS)
 
 //POST
 

@@ -176,7 +176,7 @@ function mostrarTabla(productos){
                 
                 }else{
 
-                    tdEstado.textContent = 'Inactivo'
+                    tdEstado.textContent = 'Inactivo';
 
                 };
 
@@ -196,13 +196,13 @@ function mostrarTabla(productos){
 
                 botonActualizar.addEventListener('click', e=> {
 
-                    window.location.href =`/admin/editar/${producto.id}`
+                    window.location.href =`/admin/editar/${producto.id}`;
 
                 });
 
                 botonCambiarEstado.addEventListener('click', async e=> {
 
-                    const confirmar = confirm(`Desea habilitar/deshabilitar la publicacion ${producto.nombre} con ID: ${producto.id}?`)
+                    const confirmar = confirm(`Desea habilitar/deshabilitar la publicacion ${producto.nombre} con ID: ${producto.id}?`);
 
                     if(confirmar){
 
@@ -210,7 +210,7 @@ function mostrarTabla(productos){
 
                             id: producto.id
 
-                        }
+                        };
 
                         try{
 
@@ -234,27 +234,25 @@ function mostrarTabla(productos){
 
                                 alert(respuesta.message);
 
-                                return window.location.reload()
+                                return window.location.reload();
 
                             }else{
 
                                 const respuesta = await response.json();
 
-                                console.log(respuesta)
+                                console.log(respuesta);
 
                             }
 
-
-
                         }catch(error){
     
-                            return console.error('Error al cambiarEstado ', error)
+                            return console.error('Error al cambiarEstado ', error);
     
                         }
 
                     }else{
 
-                        return
+                        return;
 
                     }
 
@@ -262,7 +260,7 @@ function mostrarTabla(productos){
 
                 botonEliminar.addEventListener('click', async e=> {
 
-                    const confirmar = confirm(`Desea eliminar la publicacion ${producto.nombre} con ID: ${producto.id}?`)
+                    const confirmar = confirm(`Desea eliminar la publicacion ${producto.nombre} con ID: ${producto.id}?`);
 
                     if(confirmar){
 
@@ -270,7 +268,7 @@ function mostrarTabla(productos){
 
                             id: producto.id
 
-                        }
+                        };
 
                         try{
 
@@ -294,27 +292,25 @@ function mostrarTabla(productos){
 
                                 alert(respuesta.message);
 
-                                return window.location.reload()
+                                return window.location.reload();
 
                             }else{
 
                                 const respuesta = await response.json();
 
-                                console.log(respuesta)
+                                console.log(respuesta);
 
                             }
 
-
-
                         }catch(error){
     
-                            return console.error('Error al cambiarEstado ', error)
-    
+                            return console.error('Error al cambiarEstado ', error);
+    ;
                         }
 
                     }else{
 
-                        return
+                        return;
 
                     }
 
@@ -339,6 +335,6 @@ function mostrarTabla(productos){
             // Se limpia la tabla y se añaden los elementos de la base de datos
 
             divTabla.innerHTML = '';
-            divTabla.appendChild(tabla)
+            divTabla.appendChild(tabla);
 
 }

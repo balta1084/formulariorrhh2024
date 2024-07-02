@@ -263,11 +263,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const respuesta = await response.json();
 
-            alert(respuesta.message);
+            if(response.status === 403){
 
-            return window.location.href = respuesta.href;
+              alert(respuesta.message);
 
-          }
+              return window.location.href = respuesta.href;
+  
+            }
+
+
+        }
 
 
         }catch(error){

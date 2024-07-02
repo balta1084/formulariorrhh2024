@@ -52,6 +52,8 @@ async function verificarUser(req){
 
     const busqueda = await pool.query(query, mail);
 
+    await pool.end()
+
     if(busqueda[0][0]){
 
         return true
@@ -89,6 +91,8 @@ async function obtenerIDUser(req){
 
     const id = busqueda[0][0].id
 
+    await pool.end()
+
     return id
 
 }
@@ -119,6 +123,8 @@ async function obtenerRol(req){
     const busqueda = await pool.query(query, mail);
 
     const rol = busqueda[0][0].rol
+
+    await pool.end()
 
     return rol
 

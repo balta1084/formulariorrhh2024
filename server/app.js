@@ -9,8 +9,6 @@ dotenv.config();
 // Importacion de Routes
 const {indexRoutes} = require('./routes/index.routes');
 const {menuRoutes} = require('./routes/menu.routes');
-const {promocionesRoutes} = require('./routes/promociones.routes');
-const {contactoRoutes} = require('./routes/contacto.routes');
 const {loginRoutes} = require('./routes/login.routes');
 const {registroRoutes} = require('./routes/registro.routes');
 const {verificarIdentidadRoutes} = require('./routes/verificar_identidad.routes');
@@ -32,8 +30,6 @@ app.use(cookieParser());
 app.use(verificarIdentidadRoutes);
 app.use(indexRoutes);
 app.use(menuRoutes);
-app.use(promocionesRoutes);
-app.use(contactoRoutes);
 app.use(loginRoutes);
 app.use(registroRoutes);
 app.use(adminRoutes);
