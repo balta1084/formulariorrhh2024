@@ -61,7 +61,7 @@ async function pedir(req,res){
         try{
 
             // Insertando pedido a la base de pedidos
-            const queryAddPedidos = `INSERT INTO Pedidos (usuario_id, total) VALUES(?,?)`
+            const queryAddPedidos = `INSERT INTO pedidos (usuario_id, total) VALUES(?,?)`
             const valuesPedido = [mailId, total.toFixed(2)]
 
             const pool = await conectar();

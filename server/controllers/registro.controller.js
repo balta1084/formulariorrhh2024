@@ -86,7 +86,7 @@ async function registrar(req,res){
 
         }
 
-        const query = 'INSERT INTO Usuarios (nombre, apellido, dni, mail, password, rol) VALUES (?, ?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO usuarios (nombre, apellido, dni, mail, password, rol) VALUES (?, ?, ?, ?, ?, ?)';
         const values = [datos.nombre, datos.apellido, datos.dni, datos.email, hashPassword, 'User'];
 
         await pool.query(query, values);

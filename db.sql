@@ -3,7 +3,7 @@
 CREATE DATABASE proyecto;
 
 -- Crear la tabla Usuarios
-CREATE TABLE Usuarios (
+CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
@@ -14,7 +14,7 @@ CREATE TABLE Usuarios (
 );
 
 -- Crear la tabla Productos
-CREATE TABLE Productos (
+CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     imagen NVARCHAR(255),
     nombre VARCHAR(100),
@@ -25,7 +25,7 @@ CREATE TABLE Productos (
 );
 
 -- Crear tabla intermedia de pedidos
-CREATE TABLE Pedidos(
+CREATE TABLE pedidos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -34,7 +34,7 @@ CREATE TABLE Pedidos(
 )
 
 -- Crear la tabla Pedidos_Productos
-CREATE TABLE Pedidos_Productos (
+CREATE TABLE pedidos_productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     pedido_id INT,
     producto_id INT,
